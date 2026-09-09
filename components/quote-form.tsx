@@ -19,7 +19,7 @@ export default function QuoteForm() {
   }
 
   return (
-    <form className="panel" id="cotizacion" onSubmit={enviar}>
+    <form className="panel" onSubmit={enviar}>
       <h3>Solicita tu cotización</h3>
       <p style={{ color: "#c3ccd8", marginTop: 0 }}>Cuéntanos qué necesitas y te respondemos a la brevedad por WhatsApp.</p>
       <label className="field"><input value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder="Nombre y empresa" /></label>
