@@ -13,9 +13,15 @@ const SECTORES: [string, string, string][] = [
   ["🚜", "Agroindustria", "Insumos y materias primas para el agro."],
 ];
 
-const LINEAS = [
-  "Ácidos y álcalis", "Solventes industriales", "Tensioactivos", "Aditivos alimentarios",
-  "Colorantes y pigmentos", "Tratamiento de aguas", "Resinas y polímeros", "Sales y minerales",
+const CATALOGO: { ic: string; cat: string; items: string[] }[] = [
+  { ic: "⚗️", cat: "Ácidos y álcalis", items: ["Ácido Sulfúrico", "Ácido Clorhídrico", "Ácido Fosfórico", "Soda Cáustica (Hidróxido de Sodio)", "Hidróxido de Potasio"] },
+  { ic: "🧴", cat: "Solventes industriales", items: ["Alcohol Isopropílico", "Acetona", "Xileno", "Tolueno", "Metanol", "Etilenglicol"] },
+  { ic: "🫧", cat: "Tensioactivos", items: ["Lauril Éter Sulfato", "Nonilfenol Etoxilado", "Cocoamidopropil Betaína", "Ácido Sulfónico"] },
+  { ic: "🍶", cat: "Aditivos alimentarios", items: ["Benzoato de Sodio", "Sorbato de Potasio", "Ácido Cítrico", "Citrato de Sodio", "CMC", "Goma Xantán"] },
+  { ic: "💧", cat: "Tratamiento de aguas", items: ["Sulfato de Aluminio", "Cloruro Férrico", "Policloruro de Aluminio", "Hipoclorito de Sodio"] },
+  { ic: "🎨", cat: "Colorantes y pigmentos", items: ["Dióxido de Titanio", "Óxidos de hierro", "Colorantes industriales"] },
+  { ic: "🏭", cat: "Resinas y polímeros", items: ["Resina PET", "PEBD / PEAD", "Resinas alquídicas"] },
+  { ic: "🧂", cat: "Sales y minerales", items: ["Cloruro de Calcio", "Sulfato de Magnesio", "Bicarbonato de Sodio", "Carbonato de Calcio"] },
 ];
 
 const VENTAJAS: [string, string][] = [
@@ -101,20 +107,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Productos */}
+      {/* Productos / Catálogo */}
       <section id="productos">
         <div className="wrap">
           <div className="center" style={{ marginBottom: 40 }}>
-            <span className="eyebrow">Nuestras líneas</span>
-            <h2 className="title">Principales líneas de productos</h2>
+            <span className="eyebrow">Nuestro catálogo</span>
+            <h2 className="title">Líneas y productos que manejamos</h2>
+            <p className="lead center" style={{ margin: "12px auto 0" }}>Una muestra de nuestras líneas. Contamos con más de 4.000 referencias en distintas presentaciones.</p>
           </div>
-          <div className="grid prodgrid">
-            {LINEAS.map((l) => (
-              <div className="prod" key={l}><span className="d"></span>{l}</div>
+          <div className="grid catgrid">
+            {CATALOGO.map((c) => (
+              <div className="cat" key={c.cat}>
+                <h3><span>{c.ic}</span> {c.cat}</h3>
+                <ul>
+                  {c.items.map((it) => <li key={it}>{it}</li>)}
+                </ul>
+              </div>
             ))}
           </div>
           <p className="center" style={{ color: "var(--muted)", marginTop: 26 }}>
-            ¿No ves lo que buscas? Tenemos más de 4.000 referencias. <a href="#cotizacion" style={{ color: "var(--accent)", fontWeight: 700 }}>Consúltanos →</a>
+            ¿No ves lo que buscas? Tenemos muchas más referencias. <a href="#cotizacion" style={{ color: "var(--accent)", fontWeight: 700 }}>Consúltanos →</a>
           </p>
         </div>
       </section>

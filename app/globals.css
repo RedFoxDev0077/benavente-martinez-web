@@ -103,3 +103,12 @@ footer{background:var(--ink);color:#aab6c2;padding:40px 0;font-size:14px}
 
 .wa{position:fixed;right:20px;bottom:20px;background:#25d366;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 10px 26px rgba(37,211,102,.5);z-index:50}
 .wa svg{width:30px;height:30px;fill:#fff}
+
+/* Catálogo por categoría */
+.catgrid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.cat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow-sm);transition:.18s}
+.cat:hover{box-shadow:var(--shadow)}
+.cat h3{font-size:17px;color:var(--ink);margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.cat ul{list-style:none;padding:0;margin:0}
+.cat li{padding:5px 0;color:#3a4650;font-size:14.5px;display:flex;gap:9px;align-items:flex-start}
+.cat li::before{content:"✓";color:var(--accent);font-weight:800;flex:none}
