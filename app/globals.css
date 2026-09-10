@@ -228,3 +228,37 @@ footer a:hover{opacity:.7}
 .d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}.featcard .ph{transition:none}}
+
+/* ---- Tablet ---- */
+@media(max-width:900px){
+  section{padding:64px 0}
+  .band{padding:34px}
+}
+/* ---- Mobile ---- */
+@media(max-width:640px){
+  section{padding:54px 0}
+  .wrap{padding:0 18px}
+  .nav{height:66px}
+  .nav .logo{height:42px}
+  .hero .inner{padding:76px 0 84px}
+  .hero p{font-size:16.5px;margin:18px 0 28px}
+  .badges{margin-top:34px;gap:10px}
+  .badge{padding:9px 14px;font-size:13px}
+  .stats .wrap{padding:26px 18px}
+  .stat b{font-size:26px}
+  h2.title{font-size:27px}
+  .intro{margin-bottom:26px}
+  .featcard{height:230px}
+  .featcta{min-height:0;padding:26px}
+  .cell{min-height:0;padding:24px 22px}
+  .band{padding:26px;border-radius:18px}
+  .panel{padding:22px}
+  .map iframe{height:270px}
+  .btn{padding:12px 20px;font-size:14.5px}
+  .cta-row{gap:12px}
+  .toTop{bottom:84px;right:16px}
+  .wa{right:16px;bottom:16px;width:54px;height:54px}
+  footer{padding:44px 0 26px}
+}
+/* Evita desbordes horizontales por textos largos */
+h1,h2,h3,p,a{overflow-wrap:break-word}
