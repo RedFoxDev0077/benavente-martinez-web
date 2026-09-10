@@ -79,7 +79,9 @@ header.scrolled{box-shadow:0 6px 22px rgba(15,17,21,.07)}
 @media(max-width:1040px){.socials{display:none}}
 
 /* Stats */
-.stats{background:var(--ink);color:#fff}
+.stats{color:#fff;
+  background:linear-gradient(rgba(13,16,21,.9),rgba(13,16,21,.92)),url('/images/sectores/aguas.jpg');
+  background-size:cover;background-position:center}
 .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:32px 24px}
 .stat{text-align:center}
 .stat b{display:block;font-size:30px;font-weight:800;color:var(--accent2)}
@@ -162,7 +164,9 @@ header.scrolled{box-shadow:0 6px 22px rgba(15,17,21,.07)}
 .step p{color:var(--muted);font-size:14.5px;margin:0}
 
 /* Quote band */
-.band{background:var(--ink);color:#fff;border-radius:26px;padding:46px;position:relative;overflow:hidden}
+.band{color:#fff;border-radius:26px;padding:46px;position:relative;overflow:hidden;
+  background:linear-gradient(150deg,rgba(13,16,21,.92),rgba(20,26,34,.82)),url('/images/sectores/industria.jpg');
+  background-size:cover;background-position:center}
 .band::before{content:"";position:absolute;right:-70px;top:-70px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(111,163,222,.30),transparent 70%)}
 .band .split{position:relative;z-index:2}
 .panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:30px}
