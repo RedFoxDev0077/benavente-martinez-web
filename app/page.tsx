@@ -44,6 +44,13 @@ const PASOS: { t: string; d: string }[] = [
   { t: "Despachamos", d: "Coordinamos la entrega en tu ubicación, en todo el país." },
 ];
 
+// Contenido de ejemplo — reemplazar por artículos reales.
+const BLOG: { t: string; d: string; cat: string; fecha: string; img: string }[] = [
+  { t: "Cómo elegir el tensioactivo correcto para su formulación", d: "Guía práctica para seleccionar el tensioactivo según el tipo de producto y rendimiento deseado.", cat: "Formulación", fecha: "Sep 2026", img: "cosmetica" },
+  { t: "Buenas prácticas en el almacenamiento de productos químicos", d: "Recomendaciones clave de seguridad y manejo para conservar la calidad de sus insumos.", cat: "Seguridad", fecha: "Sep 2026", img: "industria" },
+  { t: "Claves del tratamiento de aguas industriales", d: "Coagulantes, floculantes y desinfección: qué considerar para un proceso eficiente.", cat: "Tratamiento de aguas", fecha: "Sep 2026", img: "aguas" },
+];
+
 export default function Home() {
   return (
     <>
@@ -206,6 +213,35 @@ export default function Home() {
                 <h3>{p.t}</h3>
                 <p>{p.d}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Blog / noticias */}
+      <section id="blog">
+        <div className="wrap">
+          <div className="intro reveal">
+            <div>
+              <span className="eyebrow">Recursos</span>
+              <h2 className="title">Noticias y guías</h2>
+            </div>
+            <div>
+              <p>Consejos y novedades sobre productos químicos e insumos industriales para su operación.</p>
+              <a className="more" href={waLink("Hola, quisiera más información.")} target="_blank" rel="noopener noreferrer"><span className="circ"><Icon name="arrowUR" /></span> Escríbenos</a>
+            </div>
+          </div>
+          <div className="grid blog">
+            {BLOG.map((b, i) => (
+              <article className={`post reveal d${i + 1}`} key={b.t}>
+                <div className="img" style={{ backgroundImage: `url(/images/sectores/${b.img}.jpg)` }} />
+                <div className="meta"><span>{b.cat}</span><span>{b.fecha}</span></div>
+                <div className="body">
+                  <h3>{b.t}</h3>
+                  <p>{b.d}</p>
+                  <a className="more" href="#contacto"><span className="circ"><Icon name="arrowUR" /></span> Leer más</a>
+                </div>
+              </article>
             ))}
           </div>
         </div>

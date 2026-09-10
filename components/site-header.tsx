@@ -6,6 +6,7 @@ const LINKS: [string, string][] = [
   ["#nosotros", "Nosotros"],
   ["#sectores", "Sectores"],
   ["#catalogo", "Productos"],
+  ["#blog", "Blog"],
   ["#contacto", "Contacto"],
 ];
 
