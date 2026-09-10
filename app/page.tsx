@@ -147,8 +147,10 @@ export default function Home() {
           <div className="grid adv">
             {VENTAJAS.map((v, i) => (
               <div className={`advitem reveal d${i + 1}`} key={v.t}>
-                <span className="n">{String(i + 1).padStart(2, "0")}</span>
-                <div className="icontile"><Icon name={v.ic} /></div>
+                <div className="advhead">
+                  <div className="icontile"><Icon name={v.ic} /></div>
+                  <span className="num">{String(i + 1).padStart(2, "0")}</span>
+                </div>
                 <h3>{v.t}</h3>
                 <p>{v.d}</p>
               </div>
