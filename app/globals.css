@@ -296,3 +296,7 @@ footer a:hover{color:#fff}
 }
 /* Evita desbordes horizontales por textos largos */
 h1,h2,h3,p,a{overflow-wrap:break-word}
+/* Los enlaces de ancla no quedan ocultos bajo el header fijo */
+section[id]{scroll-margin-top:92px}
+/* Accesibilidad: foco visible para teclado */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}

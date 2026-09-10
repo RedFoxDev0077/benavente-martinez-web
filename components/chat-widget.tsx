@@ -7,7 +7,7 @@ type Msg = { role: "user" | "assistant"; content: string };
 
 const GREETING =
   "¡Hola! 👋 Soy el asistente de Suministros Técnicos Benavente Martínez. Puedo orientarte sobre productos, sectores, cotizaciones y contacto. ¿En qué te ayudo?";
-const SUGERENCIAS = ["¿Qué productos manejan?", "¿Cómo solicito una cotización?", "¿Hacen despacho nacional?"];
+const SUGERENCIAS = ["¿Qué productos manejan?", "¿Cómo solicito una cotización?", "¿Hacen despacho nacional?", "¿Dónde están ubicados?"];
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);

@@ -7,7 +7,7 @@ export default function HeroCarousel({ images }: { images: string[] }) {
 
   useEffect(() => {
     if (images.length < 2) return;
-    const t = setInterval(() => setI((p) => (p + 1) % images.length), 6000);
+    const t = setInterval(() => setI((p) => (p + 1) % images.length), 5000);
     return () => clearInterval(t);
   }, [images.length]);
 

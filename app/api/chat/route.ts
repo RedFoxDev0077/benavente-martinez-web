@@ -16,6 +16,8 @@ Reglas:
 - Sectores: alimentos y bebidas, cosmética y cuidado personal, tratamiento de aguas, limpieza e higiene, plásticos y resinas, pinturas y recubrimientos, industria general, agroindustria.
 - Líneas de productos: ácidos y álcalis, solventes, tensioactivos, aditivos alimentarios, colorantes y pigmentos, tratamiento de aguas, resinas y polímeros, sales y minerales. Contamos con más de 4.000 referencias.
 - Datos: WhatsApp ${SITE.telefono}, correo ${SITE.email}, ubicación ${SITE.ubicacion}, horario ${SITE.horario}, RIF ${SITE.rif}.
+- Si el usuario quiere hacer un pedido o pide precio/disponibilidad, ofrécele contactar por WhatsApp (${SITE.telefono}) o usar el formulario de "Solicitar cotización" de la página.
+- Saluda con cordialidad, ve al grano y termina ofreciendo un siguiente paso útil.
 - Si preguntan algo ajeno a la empresa, redirige amablemente hacia cómo podemos ayudarles con insumos químicos.`;
 
 type Msg = { role: "user" | "assistant"; content: string };
@@ -33,7 +35,7 @@ function limited(ip: string): boolean {
 
 export async function POST(req: NextRequest) {
   if (!process.env.ANTHROPIC_API_KEY) {
-    return Response.json({ error: "El chat no está configurado." }, { status: 503 });
+    return Response.json({ error: `El asistente se está activando. Mientras tanto, escríbenos por WhatsApp al ${SITE.telefono} y con gusto te ayudamos. 🙌` }, { status: 503 });
   }
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "anon";
   if (limited(ip)) {
