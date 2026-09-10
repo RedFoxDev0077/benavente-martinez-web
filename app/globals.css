@@ -1,6 +1,6 @@
 :root{
   --ink:#0f1115; --ink2:#171b21; --ink3:#20262e;
-  --lime:#c4f24c; --lime-d:#b1e634; --lime-ink:#16220a;
+  --lime:#c7f24d; --lime-d:#aee235; --lime-ink:#15200a;
   --txt:#14171c; --muted:#5c636d; --line:#e7e8e4; --bg:#fff; --soft:#f5f6f2;
   --shadow:0 18px 44px rgba(15,17,21,.10); --shadow-sm:0 6px 18px rgba(15,17,21,.06);
   --radius:20px;
@@ -193,6 +193,14 @@ footer h4{color:var(--lime-ink);font-size:15px;margin:0 0 12px;font-weight:800}
 footer p{margin:6px 0;color:#2c3a13}
 footer a:hover{opacity:.7}
 .fbot{margin-top:38px;padding-top:20px;border-top:1px solid rgba(22,34,10,.18);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:#2c3a13}
+
+/* Marcas / proveedores strip */
+.marcas{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;align-items:center}
+.marca{height:72px;flex:1 1 150px;min-width:140px;max-width:200px;border:1px solid var(--line);border-radius:14px;background:#fff;display:grid;place-items:center;color:#a7adb5;transition:.2s}
+.marca:hover{color:var(--ink);border-color:var(--ink);transform:translateY(-2px)}
+.marca svg{width:32px;height:32px}
+.marca img{max-height:44px;max-width:80%;width:auto;filter:grayscale(1);opacity:.7;transition:.2s}
+.marca:hover img{filter:none;opacity:1}
 
 /* Floating */
 .wa{position:fixed;right:20px;bottom:20px;background:#25d366;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 10px 26px rgba(37,211,102,.5);z-index:50;transition:.2s}

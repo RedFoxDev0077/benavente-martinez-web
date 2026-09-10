@@ -56,7 +56,7 @@ export default function Home() {
         </div>
         <div className="wrap inner reveal in">
           <span className="eyebrow lime">Suministros Técnicos · Productos químicos</span>
-          <h1 style={{ marginTop: 16 }}>La materia prima que mantiene <span className="g">su producción en marcha</span></h1>
+          <h1 style={{ marginTop: 16 }}>Química que impulsa <span className="g">su producción</span></h1>
           <p>Distribuimos una amplia línea de productos químicos, materias primas y aditivos para la industria venezolana — con asesoría técnica, stock disponible y despacho a todo el país.</p>
           <div className="cta-row">
             <a className="btn btn-accent" href="#cotizacion">Solicitar cotización <Icon name="arrowUR" /></a>
@@ -244,6 +244,21 @@ export default function Home() {
           <div className="map reveal">
             <iframe title="Ubicación" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=Valencia,Carabobo,Venezuela&output=embed" />
+          </div>
+        </div>
+      </section>
+
+      {/* Marcas / proveedores */}
+      <section className="soft" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="center reveal" style={{ marginBottom: 32 }}>
+            <span className="eyebrow">Confianza</span>
+            <h2 className="title">Marcas y proveedores que distribuimos</h2>
+          </div>
+          <div className="marcas reveal">
+            {["flask", "droplet", "cube", "spray", "box", "sprout"].map((ic, i) => (
+              <div className="marca" key={i} title="Logo de marca (reemplazar)"><Icon name={ic} /></div>
+            ))}
           </div>
         </div>
       </section>
