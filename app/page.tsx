@@ -4,6 +4,7 @@ import SiteHeader from "@/components/site-header";
 import QuoteForm from "@/components/quote-form";
 import ScrollAnimations from "@/components/scroll-animations";
 import HeroCarousel from "@/components/hero-carousel";
+import ChatWidget from "@/components/chat-widget";
 
 const HERO_SLIDES = ["/images/hero/1.jpg", "/images/hero/2.jpg", "/images/hero/3.jpg"];
 
@@ -340,6 +341,7 @@ export default function Home() {
 
       {/* Floating */}
       <a className="wa" href={waLink("Hola, quisiera solicitar una cotización.")} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><Icon name="whatsapp" size={30} /></a>
+      <ChatWidget />
       <ScrollAnimations />
     </>
   );
