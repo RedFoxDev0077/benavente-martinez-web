@@ -58,12 +58,17 @@ header.scrolled{box-shadow:0 6px 22px rgba(15,17,21,.07)}
 .mobile.open{display:block;animation:fade .2s ease}
 @media(max-width:940px){.navlinks,.nav>.cta{display:none}.burger{display:block}}
 
-/* Hero */
-.hero{position:relative;overflow:hidden;color:#fff;
-  background:linear-gradient(180deg,rgba(15,17,21,.55),rgba(15,17,21,.82)),
-  linear-gradient(120deg,rgba(15,17,21,.5),transparent 60%),
-  url('/images/hero.jpg');background-size:cover;background-position:center}
-.hero .inner{position:relative;z-index:2;max-width:760px;padding:110px 0 118px}
+/* Hero + carrusel */
+.hero{position:relative;overflow:hidden;color:#fff;background:var(--ink)}
+.hero-slides{position:absolute;inset:0;z-index:0}
+.hslide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease}
+.hslide.on{opacity:1;animation:heroZoom 7s ease forwards}
+@keyframes heroZoom{from{transform:scale(1.05)}to{transform:scale(1.13)}}
+.hero-ov{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(13,16,21,.5),rgba(13,16,21,.82)),linear-gradient(120deg,rgba(13,16,21,.55),transparent 62%)}
+.hero-dots{position:absolute;left:0;right:0;bottom:24px;z-index:3;display:flex;gap:10px;justify-content:center}
+.hero-dots button{width:10px;height:10px;border-radius:50%;border:0;background:rgba(255,255,255,.45);cursor:pointer;transition:.25s;padding:0}
+.hero-dots button.on{background:var(--accent2);width:28px;border-radius:6px}
+.hero .inner{position:relative;z-index:2;max-width:760px;padding:110px 0 122px}
 .hero h1{font-size:clamp(36px,6vw,68px);font-weight:800;letter-spacing:-.03em}
 .hero h1 .g{color:var(--accent2)}
 .hero p{color:#d3d7dd;font-size:19px;max-width:560px;margin:22px 0 34px}
@@ -79,9 +84,7 @@ header.scrolled{box-shadow:0 6px 22px rgba(15,17,21,.07)}
 @media(max-width:1040px){.socials{display:none}}
 
 /* Stats */
-.stats{color:#fff;
-  background:linear-gradient(rgba(13,16,21,.9),rgba(13,16,21,.92)),url('/images/sectores/aguas.jpg');
-  background-size:cover;background-position:center}
+.stats{background:linear-gradient(180deg,var(--ink),var(--ink2));color:#fff}
 .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:32px 24px}
 .stat{text-align:center}
 .stat b{display:block;font-size:30px;font-weight:800;color:var(--accent2)}
@@ -164,9 +167,7 @@ header.scrolled{box-shadow:0 6px 22px rgba(15,17,21,.07)}
 .step p{color:var(--muted);font-size:14.5px;margin:0}
 
 /* Quote band */
-.band{color:#fff;border-radius:26px;padding:46px;position:relative;overflow:hidden;
-  background:linear-gradient(150deg,rgba(13,16,21,.92),rgba(20,26,34,.82)),url('/images/sectores/industria.jpg');
-  background-size:cover;background-position:center}
+.band{background:linear-gradient(150deg,var(--ink),var(--ink2));color:#fff;border-radius:26px;padding:46px;position:relative;overflow:hidden}
 .band::before{content:"";position:absolute;right:-70px;top:-70px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(111,163,222,.30),transparent 70%)}
 .band .split{position:relative;z-index:2}
 .panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:30px}

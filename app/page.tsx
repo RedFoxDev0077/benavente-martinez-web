@@ -3,6 +3,9 @@ import { Icon } from "@/components/icons";
 import SiteHeader from "@/components/site-header";
 import QuoteForm from "@/components/quote-form";
 import ScrollAnimations from "@/components/scroll-animations";
+import HeroCarousel from "@/components/hero-carousel";
+
+const HERO_SLIDES = ["/images/hero/1.jpg", "/images/hero/2.jpg", "/images/hero/3.jpg"];
 
 const FEATURED: { t: string; d: string; img: string }[] = [
   { t: "Químicos industriales", d: "Ácidos, álcalis, solventes y más", img: "industria" },
@@ -58,6 +61,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className="hero">
+        <HeroCarousel images={HERO_SLIDES} />
         <div className="socials">
           <a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">Facebook</a>
         </div>
