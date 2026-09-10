@@ -23,6 +23,8 @@ const P: Record<string, JSX.Element> = {
   globe: <><circle cx="12" cy="12" r="9" /><path d="M3 12h18" /><path d="M12 3c2.6 2.5 4 5.7 4 9s-1.4 6.5-4 9c-2.6-2.5-4-5.7-4-9s1.4-6.5 4-9z" /></>,
   bolt: <path d="M13 2 4 14h6l-1 8 9-12h-6z" />,
   chevronUp: <path d="m6 15 6-6 6 6" />,
+  arrowUR: <><path d="M7 17 17 7" /><path d="M8 7h9v9" /></>,
+  play: <path d="M7 5.5v13l11-6.5z" />,
 };
 
 export function Icon({ name, size = 24, className }: { name: string; size?: number; className?: string }) {

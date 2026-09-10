@@ -1,19 +1,23 @@
-import type { CSSProperties } from "react";
 import { SITE, waLink } from "@/lib/site";
 import { Icon } from "@/components/icons";
 import SiteHeader from "@/components/site-header";
 import QuoteForm from "@/components/quote-form";
 import ScrollAnimations from "@/components/scroll-animations";
 
-const SECTORES: { ic: string; t: string; d: string; slug: string; tint: string }[] = [
-  { ic: "cup", t: "Alimentos y bebidas", d: "Aditivos, conservantes y grado alimenticio.", slug: "alimentos", tint: "linear-gradient(135deg,#20344d,#12406b)" },
-  { ic: "droplet", t: "Cosmética y cuidado personal", d: "Tensioactivos, humectantes y materias primas.", slug: "cosmetica", tint: "linear-gradient(135deg,#3a2a4d,#5b3a6b)" },
-  { ic: "droplets", t: "Tratamiento de aguas", d: "Coagulantes, floculantes y desinfección.", slug: "aguas", tint: "linear-gradient(135deg,#123a4b,#0e5a6b)" },
-  { ic: "spray", t: "Limpieza e higiene", d: "Insumos para detergentes y sanitizantes.", slug: "limpieza", tint: "linear-gradient(135deg,#123f39,#166b57)" },
-  { ic: "cube", t: "Plásticos y resinas", d: "Resinas, polímeros y aditivos.", slug: "plasticos", tint: "linear-gradient(135deg,#2b3340,#3a4658)" },
-  { ic: "brush", t: "Pinturas y recubrimientos", d: "Pigmentos, solventes y aditivos.", slug: "pinturas", tint: "linear-gradient(135deg,#4d3320,#6b4a16)" },
-  { ic: "flask", t: "Industria general", d: "Ácidos, álcalis y solventes industriales.", slug: "industria", tint: "linear-gradient(135deg,#1f2b3d,#28405e)" },
-  { ic: "sprout", t: "Agroindustria", d: "Insumos y materias primas para el agro.", slug: "agro", tint: "linear-gradient(135deg,#20341f,#3a5b2a)" },
+const FEATURED: { t: string; d: string; img: string }[] = [
+  { t: "Químicos industriales", d: "Ácidos, álcalis, solventes y más", img: "industria" },
+  { t: "Polímeros y resinas", d: "Resinas, PET y polímeros", img: "plasticos" },
+];
+
+const SECTORES: { ic: string; t: string; d: string }[] = [
+  { ic: "cup", t: "Alimentos y bebidas", d: "Aditivos, conservantes y grado alimenticio." },
+  { ic: "droplet", t: "Cosmética y cuidado personal", d: "Tensioactivos, humectantes y materias primas." },
+  { ic: "droplets", t: "Tratamiento de aguas", d: "Coagulantes, floculantes y desinfección." },
+  { ic: "spray", t: "Limpieza e higiene", d: "Insumos para detergentes y sanitizantes." },
+  { ic: "cube", t: "Plásticos y resinas", d: "Resinas, polímeros y aditivos." },
+  { ic: "brush", t: "Pinturas y recubrimientos", d: "Pigmentos, solventes y aditivos." },
+  { ic: "flask", t: "Industria general", d: "Ácidos, álcalis y solventes industriales." },
+  { ic: "sprout", t: "Agroindustria", d: "Insumos y materias primas para el agro." },
 ];
 
 const CATALOGO: { ic: string; cat: string; items: string[] }[] = [
@@ -47,19 +51,21 @@ export default function Home() {
 
       {/* Hero */}
       <section className="hero">
+        <div className="socials">
+          <a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">Facebook</a>
+        </div>
         <div className="wrap inner reveal in">
-          <span className="eyebrow" style={{ color: "#8fb4ea" }}>Suministros Técnicos · Productos químicos e industriales</span>
-          <h1 style={{ marginTop: 14 }}>La materia prima que mantiene <span className="g">su producción en marcha</span></h1>
+          <span className="eyebrow lime">Suministros Técnicos · Productos químicos</span>
+          <h1 style={{ marginTop: 16 }}>La materia prima que mantiene <span className="g">su producción en marcha</span></h1>
           <p>Distribuimos una amplia línea de productos químicos, materias primas y aditivos para la industria venezolana — con asesoría técnica, stock disponible y despacho a todo el país.</p>
           <div className="cta-row">
-            <a className="btn btn-accent" href="#cotizacion">Solicitar cotización <Icon name="arrow" /></a>
-            <a className="btn btn-line" href="#productos">Ver catálogo</a>
+            <a className="btn btn-accent" href="#cotizacion">Solicitar cotización <Icon name="arrowUR" /></a>
+            <a className="more" href="#productos"><span className="circ"><Icon name="arrowUR" /></span> Ver catálogo</a>
           </div>
           <div className="badges">
             <div className="badge"><Icon name="box" /> <b>Amplio inventario</b></div>
             <div className="badge"><Icon name="globe" /> <b>Despacho nacional</b></div>
             <div className="badge"><Icon name="headset" /> <b>Asesoría técnica</b></div>
-            <div className="badge"><Icon name="bolt" /> <b>Atención directa</b></div>
           </div>
         </div>
       </section>
@@ -74,8 +80,37 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Featured products */}
+      <section id="productos">
+        <div className="wrap">
+          <div className="intro reveal">
+            <div>
+              <span className="eyebrow">Nuestros productos</span>
+              <h2 className="title">Materias primas y químicos para cada industria</h2>
+            </div>
+            <div>
+              <p>Contamos con más de 4.000 referencias en distintas presentaciones, con la calidad y disponibilidad que su producción necesita.</p>
+              <a className="more" href="#catalogo"><span className="circ"><Icon name="arrowUR" /></span> Ver el catálogo</a>
+            </div>
+          </div>
+          <div className="grid feat">
+            {FEATURED.map((f) => (
+              <a key={f.t} href="#cotizacion" className="featcard reveal">
+                <div className="ph" style={{ backgroundImage: `url(/images/sectores/${f.img}.jpg)` }} />
+                <div className="ov" />
+                <div className="lbl">{f.t}<div style={{ fontWeight: 500, fontSize: 13.5, opacity: 0.85 }}>{f.d}</div></div>
+              </a>
+            ))}
+            <div className="featcta reveal d2">
+              <h3>Explora todo nuestro catálogo</h3>
+              <a className="more" href="#catalogo"><span className="circ"><Icon name="arrowUR" /></span> Ver más productos</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Nosotros */}
-      <section id="nosotros">
+      <section id="nosotros" className="soft">
         <div className="wrap split">
           <div className="reveal">
             <span className="eyebrow">Quiénes somos</span>
@@ -84,7 +119,7 @@ export default function Home() {
               Somos una empresa venezolana especializada en la distribución de productos químicos e insumos industriales para múltiples sectores. Combinamos un amplio catálogo, precios competitivos y una atención cercana para que cada cliente reciba exactamente lo que necesita, a tiempo.
             </p>
             <div className="cta-row" style={{ marginTop: 26 }}>
-              <a className="btn btn-accent" href="#cotizacion">Solicitar cotización</a>
+              <a className="btn btn-dark" href="#cotizacion">Solicitar cotización</a>
               <a className="btn btn-wa" href={waLink("Hola, quisiera información sobre sus productos.")} target="_blank" rel="noopener noreferrer"><Icon name="whatsapp" /> WhatsApp</a>
             </div>
           </div>
@@ -92,36 +127,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sectores */}
-      <section id="sectores" className="soft">
+      {/* Sectores — bordered grid */}
+      <section id="sectores">
         <div className="wrap">
-          <div className="center reveal" style={{ marginBottom: 42 }}>
-            <span className="eyebrow">Sectores que atendemos</span>
-            <h2 className="title">Soluciones para cada industria</h2>
+          <div className="intro reveal">
+            <div>
+              <span className="eyebrow">Sectores que atendemos</span>
+              <h2 className="title">Soluciones para cada industria</h2>
+            </div>
+            <div>
+              <p>Atendemos a múltiples sectores con la línea de productos adecuada para cada proceso productivo.</p>
+              <a className="more" href="#cotizacion"><span className="circ"><Icon name="arrowUR" /></span> Solicitar cotización</a>
+            </div>
           </div>
-          <div className="grid sectors">
-            {SECTORES.map((s, i) => (
-              <a key={s.slug} href="#cotizacion" className={`sector reveal d${(i % 4) + 1}`} style={{ "--tint": s.tint } as CSSProperties}>
-                <div className="ph" style={{ backgroundImage: `url(/images/sectores/${s.slug}.jpg)` }} />
-                <div className="ov" />
-                <div className="c">
-                  <span className="chip"><Icon name={s.ic} /></span>
-                  <h3>{s.t}</h3>
-                  <p>{s.d}</p>
-                </div>
-              </a>
+          <div className="svc reveal">
+            {SECTORES.map((s) => (
+              <div className="cell" key={s.t}>
+                <span className="ci"><Icon name={s.ic} /></span>
+                <h3>{s.t}</h3>
+                <p>{s.d}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Catálogo */}
-      <section id="productos">
+      <section id="catalogo" className="soft">
         <div className="wrap">
           <div className="center reveal" style={{ marginBottom: 42 }}>
             <span className="eyebrow">Nuestro catálogo</span>
             <h2 className="title">Líneas y productos que manejamos</h2>
-            <p className="lead center mx" style={{ marginTop: 12 }}>Una muestra de nuestras líneas. Contamos con más de 4.000 referencias en distintas presentaciones.</p>
           </div>
           <div className="grid catgrid">
             {CATALOGO.map((c, i) => (
@@ -131,14 +167,11 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="center" style={{ color: "var(--muted)", marginTop: 28 }}>
-            ¿No ves lo que buscas? Tenemos muchas más referencias. <a href="#cotizacion" style={{ color: "var(--accent)", fontWeight: 700 }}>Consúltanos →</a>
-          </p>
         </div>
       </section>
 
-      {/* Ventajas */}
-      <section className="soft">
+      {/* Por qué elegirnos */}
+      <section>
         <div className="wrap">
           <div className="center reveal" style={{ marginBottom: 42 }}>
             <span className="eyebrow">Por qué elegirnos</span>
@@ -160,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* Proceso */}
-      <section>
+      <section className="soft">
         <div className="wrap">
           <div className="center reveal" style={{ marginBottom: 42 }}>
             <span className="eyebrow">Cómo trabajamos</span>
@@ -179,25 +212,24 @@ export default function Home() {
       </section>
 
       {/* Cotización */}
-      <section id="cotizacion" className="soft">
+      <section id="cotizacion">
         <div className="wrap">
-          <div className="band split">
-            <div className="reveal">
-              <span className="eyebrow" style={{ color: "#8fb4ea" }}>Cotización sin compromiso</span>
-              <h2 className="title" style={{ color: "#fff", marginTop: 10 }}>Solicita tu cotización hoy</h2>
-              <p style={{ color: "#c3ccd8", fontSize: 18, marginTop: 12, maxWidth: 440 }}>Déjanos tus datos y qué necesitas. Un asesor te responde a la brevedad con precio y disponibilidad.</p>
-              <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 12 }}>
-                <a className="btn btn-wa" href={waLink("Hola, quisiera solicitar una cotización.")} target="_blank" rel="noopener noreferrer" style={{ alignSelf: "flex-start" }}><Icon name="whatsapp" /> Cotizar por WhatsApp</a>
-                <span style={{ color: "#9fb0c1", fontSize: 14 }}>o completa el formulario →</span>
+          <div className="band">
+            <div className="split">
+              <div className="reveal">
+                <span className="eyebrow lime">Cotización sin compromiso</span>
+                <h2 className="title" style={{ color: "#fff", marginTop: 10 }}>Solicita tu cotización hoy</h2>
+                <p style={{ color: "#c8cdd4", fontSize: 18, marginTop: 12, maxWidth: 440 }}>Déjanos tus datos y qué necesitas. Un asesor te responde a la brevedad con precio y disponibilidad.</p>
+                <a className="btn btn-accent" href={waLink("Hola, quisiera solicitar una cotización.")} target="_blank" rel="noopener noreferrer" style={{ marginTop: 22 }}><Icon name="whatsapp" /> Cotizar por WhatsApp</a>
               </div>
+              <QuoteForm />
             </div>
-            <QuoteForm />
           </div>
         </div>
       </section>
 
       {/* Contacto */}
-      <section id="contacto">
+      <section id="contacto" className="soft">
         <div className="wrap">
           <div className="center reveal" style={{ marginBottom: 42 }}>
             <span className="eyebrow">Contacto</span>
@@ -223,21 +255,25 @@ export default function Home() {
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <span className="lg"><img src="/logo.png" alt={SITE.nombre} /></span>
-              <p style={{ maxWidth: 320 }}>{SITE.descripcion}</p>
+              <p style={{ maxWidth: 300 }}>{SITE.descripcion}</p>
             </div>
             <div>
               <h4>Enlaces</h4>
               <p><a href="#nosotros">Nosotros</a></p>
               <p><a href="#sectores">Sectores</a></p>
-              <p><a href="#productos">Productos</a></p>
-              <p><a href="#cotizacion">Solicitar cotización</a></p>
+              <p><a href="#catalogo">Productos</a></p>
+              <p><a href="#cotizacion">Cotización</a></p>
             </div>
             <div>
               <h4>Contacto</h4>
               <p>{SITE.telefono}</p>
               <p>{SITE.email}</p>
               <p>{SITE.ubicacion}</p>
+            </div>
+            <div>
+              <h4>Horario</h4>
               <p>{SITE.horario}</p>
+              <a className="btn btn-dark" href={waLink("Hola, quisiera solicitar una cotización.")} target="_blank" rel="noopener noreferrer" style={{ marginTop: 8 }}><Icon name="whatsapp" /> WhatsApp</a>
             </div>
           </div>
           <div className="fbot">

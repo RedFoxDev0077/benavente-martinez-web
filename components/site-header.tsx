@@ -1,13 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { SITE, waLink } from "@/lib/site";
-import { Icon } from "./icons";
 
 const LINKS: [string, string][] = [
   ["#nosotros", "Nosotros"],
   ["#sectores", "Sectores"],
-  ["#productos", "Productos"],
+  ["#catalogo", "Productos"],
   ["#contacto", "Contacto"],
 ];
 
@@ -15,13 +13,6 @@ export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <div className="topbar">
-        <div className="wrap">
-          <a className="hideS" href={`tel:${SITE.telefono.replace(/[^0-9+]/g, "")}`}><Icon name="phone" /> {SITE.telefono}</a>
-          <a className="hideS" href={`mailto:${SITE.email}`}><Icon name="mail" /> {SITE.email}</a>
-          <a className="sp" href={waLink("Hola, quisiera información.")} target="_blank" rel="noopener noreferrer"><Icon name="whatsapp" /> Escríbenos por WhatsApp</a>
-        </div>
-      </div>
       <header>
         <div className="wrap nav">
           {/* eslint-disable-next-line @next/next/no-img-element */}
