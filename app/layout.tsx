@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "materias primas",
     "distribuidora química Venezuela",
     "suministros técnicos",
-    "Valencia Carabobo",
+    "Los Teques Miranda",
   ],
   openGraph: {
     title: `${SITE.nombre} | Productos químicos e insumos industriales`,

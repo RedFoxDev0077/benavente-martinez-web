@@ -9,7 +9,9 @@ export const SITE = {
   telefono: "+58 412-362.27.52",
   email: "suministrostecnicosbm@gmail.com",
   rif: "J-40891289-9",
-  ubicacion: "Valencia y Guacara, estado Carabobo, Venezuela",
+  ubicacion: "Los Teques, estado Miranda", // domicilio fiscal
+  almacenes: "Valencia, Maracay y San Antonio de Los Altos",
+  despacho: "Despacho a todo el país",
   horario: "Lunes a viernes · 8:00 a.m. – 5:00 p.m.",
 };
 

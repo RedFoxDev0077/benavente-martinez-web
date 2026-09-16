@@ -280,11 +280,12 @@ export default function Home() {
             <a className="cbox reveal d1" href={waLink("Hola, quisiera más información.")} target="_blank" rel="noopener noreferrer"><span className="ci"><Icon name="whatsapp" /></span><div><b>WhatsApp</b><span>Respuesta rápida con un asesor</span></div></a>
             <div className="cbox reveal d2"><span className="ci"><Icon name="phone" /></span><div><b>Teléfono</b><span>{SITE.telefono}</span></div></div>
             <a className="cbox reveal d3" href={`mailto:${SITE.email}`}><span className="ci"><Icon name="mail" /></span><div><b>Correo</b><span>{SITE.email}</span></div></a>
+            <div className="cbox reveal d4"><span className="ci"><Icon name="pin" /></span><div><b>Ubicación</b><span>{SITE.ubicacion} · Almacenes en {SITE.almacenes}. {SITE.despacho}.</span></div></div>
             <div className="cbox reveal d4"><span className="ci"><Icon name="clock" /></span><div><b>Horario</b><span>{SITE.horario}</span></div></div>
           </div>
           <div className="map reveal">
             <iframe title="Ubicación" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Valencia,Carabobo,Venezuela&output=embed" />
+              src="https://www.google.com/maps?q=Los+Teques,Miranda,Venezuela&output=embed" />
           </div>
         </div>
       </section>
@@ -325,6 +326,7 @@ export default function Home() {
               <p>{SITE.telefono}</p>
               <p>{SITE.email}</p>
               <p>{SITE.ubicacion}</p>
+              <p>Almacenes: {SITE.almacenes}</p>
             </div>
             <div>
               <h4>Horario</h4>
