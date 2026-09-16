@@ -8,51 +8,25 @@ import ChatWidget from "@/components/chat-widget";
 
 const HERO_SLIDES = ["/images/hero/1.jpg", "/images/hero/2.jpg", "/images/hero/3.jpg"];
 
-const FEATURED: { t: string; d: string; img: string }[] = [
-  { t: "Químicos industriales", d: "Ácidos, álcalis, solventes y más", img: "industria" },
-  { t: "Polímeros y resinas", d: "Resinas, PET y polímeros", img: "plasticos" },
+const NOSOTROS = [
+  "En Suministros Técnicos Benavente Martínez, C.A. somos una empresa joven, dinámica y comprometida con posicionarnos como líderes en la comercialización de materia prima para diversas industrias. Nos especializamos en ofrecer insumos confiables para sectores como cosmética, limpieza, alimentos, textiles y más.",
+  "Nuestro compromiso con la calidad y el servicio al cliente nos impulsa a destacar en un mercado competitivo. Creemos en relaciones basadas en la honestidad, el respeto y la orientación técnica precisa. Por eso, cada cliente recibe atención personalizada y asesoría experta para seleccionar los productos que mejor se ajusten a sus necesidades.",
+  "Seleccionamos cuidadosamente cada material, asegurándonos de que cumpla con los más altos estándares de calidad. Esto garantiza seguridad, confianza y resultados óptimos en sus procesos productivos.",
+  "Nos enfocamos en entender a fondo los requerimientos de cada cliente, brindando soluciones a medida que realmente aportan valor. Más que proveedores, somos aliados estratégicos en su crecimiento.",
 ];
 
-const SECTORES: { ic: string; t: string; d: string }[] = [
-  { ic: "cup", t: "Alimentos y bebidas", d: "Aditivos, conservantes y grado alimenticio." },
-  { ic: "droplet", t: "Cosmética y cuidado personal", d: "Tensioactivos, humectantes y materias primas." },
-  { ic: "droplets", t: "Tratamiento de aguas", d: "Coagulantes, floculantes y desinfección." },
-  { ic: "spray", t: "Limpieza e higiene", d: "Insumos para detergentes y sanitizantes." },
-  { ic: "cube", t: "Plásticos y resinas", d: "Resinas, polímeros y aditivos." },
-  { ic: "brush", t: "Pinturas y recubrimientos", d: "Pigmentos, solventes y aditivos." },
-  { ic: "flask", t: "Industria general", d: "Ácidos, álcalis y solventes industriales." },
-  { ic: "sprout", t: "Agroindustria", d: "Insumos y materias primas para el agro." },
+const LINEAS: { ic: string; cat: string; items: string[] }[] = [
+  { ic: "droplet", cat: "Cosmética", items: ["Aceite de Ricino USP / Hidrogenado PEG-4", "Acetato de sodio", "Óxido de Zinc", "Dióxido de titanio ANATASE", "D-Pantenol", "Carbomer (Carbopol®)", "Lanolina Anhidra USP"] },
+  { ic: "flask", cat: "Industrial", items: ["Ácido Oléico / TOFA", "Ácido Oxálico, málico, sulfámico, tánico", "Butil Hidróxi Tolueno (BHT)", "Cloruro de Zinc", "Fenilsulfonato de Calcio", "Imidazolina Oleica (Inhibidor de Corrosión · Sector Petróleo)"] },
+  { ic: "cup", cat: "Alimentaria", items: ["Ácido ascórbico, cítrico, benzoico", "Colorantes", "Lactosa", "Lecitina de soya", "Peróxido de benzoilo", "Vainillina"] },
+  { ic: "box", cat: "Otras líneas", items: ["Alimentación Balanceada Animal (ABA)", "Veterinaria", "Cuidado del hogar", "Bolsas industriales"] },
 ];
 
-const CATALOGO: { ic: string; cat: string; items: string[] }[] = [
-  { ic: "flask", cat: "Ácidos y álcalis", items: ["Ácido Sulfúrico", "Ácido Clorhídrico", "Ácido Fosfórico", "Soda Cáustica", "Hidróxido de Potasio"] },
-  { ic: "droplet", cat: "Solventes industriales", items: ["Alcohol Isopropílico", "Acetona", "Xileno", "Tolueno", "Metanol", "Etilenglicol"] },
-  { ic: "spray", cat: "Tensioactivos", items: ["Lauril Éter Sulfato", "Nonilfenol Etoxilado", "Cocoamidopropil Betaína", "Ácido Sulfónico"] },
-  { ic: "cup", cat: "Aditivos alimentarios", items: ["Benzoato de Sodio", "Sorbato de Potasio", "Ácido Cítrico", "Citrato de Sodio", "Goma Xantán"] },
-  { ic: "droplets", cat: "Tratamiento de aguas", items: ["Sulfato de Aluminio", "Cloruro Férrico", "Policloruro de Aluminio", "Hipoclorito de Sodio"] },
-  { ic: "brush", cat: "Colorantes y pigmentos", items: ["Dióxido de Titanio", "Óxidos de hierro", "Colorantes industriales"] },
-  { ic: "cube", cat: "Resinas y polímeros", items: ["Resina PET", "PEBD / PEAD", "Resinas alquídicas"] },
-  { ic: "box", cat: "Sales y minerales", items: ["Cloruro de Calcio", "Sulfato de Magnesio", "Bicarbonato de Sodio", "Carbonato de Calcio"] },
-];
-
-const VENTAJAS: { ic: string; t: string; d: string }[] = [
-  { ic: "box", t: "Disponibilidad real", d: "Amplio stock y varias presentaciones para responder a tiempo." },
-  { ic: "headset", t: "Asesoría técnica", d: "Te ayudamos a elegir el producto y la presentación correcta." },
-  { ic: "truck", t: "Despacho a todo el país", d: "Entrega confiable y oportuna en todo el territorio nacional." },
-  { ic: "tag", t: "Precios competitivos", d: "Cotización clara y a tiempo, con la mejor relación costo-beneficio." },
-];
-
-const PASOS: { t: string; d: string }[] = [
-  { t: "Nos escribes", d: "Cuéntanos qué producto y cantidad necesitas, por WhatsApp o el formulario." },
-  { t: "Cotizamos rápido", d: "Recibes tu cotización con precio y disponibilidad a la brevedad." },
-  { t: "Despachamos", d: "Coordinamos la entrega en tu ubicación, en todo el país." },
-];
-
-// Contenido de ejemplo — reemplazar por artículos reales.
-const BLOG: { t: string; d: string; cat: string; fecha: string; img: string }[] = [
-  { t: "Cómo elegir el tensioactivo correcto para su formulación", d: "Guía práctica para seleccionar el tensioactivo según el tipo de producto y rendimiento deseado.", cat: "Formulación", fecha: "Sep 2026", img: "cosmetica" },
-  { t: "Buenas prácticas en el almacenamiento de productos químicos", d: "Recomendaciones clave de seguridad y manejo para conservar la calidad de sus insumos.", cat: "Seguridad", fecha: "Sep 2026", img: "industria" },
-  { t: "Claves del tratamiento de aguas industriales", d: "Coagulantes, floculantes y desinfección: qué considerar para un proceso eficiente.", cat: "Tratamiento de aguas", fecha: "Sep 2026", img: "aguas" },
+const DISTINGUE: { ic: string; t: string; d: string }[] = [
+  { ic: "globe", t: "Importadores confiables", d: "Alianzas sólidas con proveedores de confianza." },
+  { ic: "cube", t: "Fabricantes nacionales reconocidos", d: "Respaldo de fabricantes reconocidos del país." },
+  { ic: "truck", t: "Transportes certificados", d: "Logística confiable para entregas seguras." },
+  { ic: "shield", t: "10 años de experiencia", d: "Trayectoria y resultados comprobables." },
 ];
 
 export default function Home() {
@@ -64,189 +38,73 @@ export default function Home() {
       <section className="hero">
         <HeroCarousel images={HERO_SLIDES} />
         <div className="socials">
-          <a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">Facebook</a>
+          <a href={waLink("Hola, quisiera información.")} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href={SITE.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
         <div className="wrap inner reveal in">
-          <span className="eyebrow lime">Suministros Técnicos · Productos químicos</span>
-          <h1 style={{ marginTop: 16 }}>Química que impulsa <span className="g">su producción</span></h1>
-          <p>Distribuimos una amplia línea de productos químicos, materias primas y aditivos para la industria venezolana — con asesoría técnica, stock disponible y despacho a todo el país.</p>
+          <span className="eyebrow lime">Suministros Técnicos Benavente Martínez, C.A.</span>
+          <h1 style={{ marginTop: 16 }}>Materia prima confiable para <span className="g">industrias exigentes</span></h1>
+          <p>Comercializamos insumos confiables para cosmética, limpieza, alimentos, textiles y más — con asesoría técnica y atención personalizada.</p>
           <div className="cta-row">
             <a className="btn btn-accent" href="#cotizacion">Solicitar cotización <Icon name="arrowUR" /></a>
-            <a className="more" href="#productos"><span className="circ"><Icon name="arrowUR" /></span> Ver catálogo</a>
-          </div>
-          <div className="badges">
-            <div className="badge"><Icon name="box" /> <b>Amplio inventario</b></div>
-            <div className="badge"><Icon name="globe" /> <b>Despacho nacional</b></div>
-            <div className="badge"><Icon name="headset" /> <b>Asesoría técnica</b></div>
+            <a className="more" href="#contacto"><span className="circ"><Icon name="arrowUR" /></span> Contáctanos</a>
           </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <div className="stats">
-        <div className="wrap">
-          <div className="stat"><b data-count="4000" data-suffix="+">0</b><span>productos en catálogo</span></div>
-          <div className="stat"><b data-count="8" data-suffix="">0</b><span>sectores atendidos</span></div>
-          <div className="stat"><b>Nacional</b><span>despacho a todo el país</span></div>
-          <div className="stat"><b>Directa</b><span>asesoría especializada</span></div>
-        </div>
-      </div>
-
-      {/* Featured products */}
-      <section id="productos">
-        <div className="wrap">
-          <div className="intro reveal">
-            <div>
-              <span className="eyebrow">Nuestros productos</span>
-              <h2 className="title">Materias primas y químicos para cada industria</h2>
-            </div>
-            <div>
-              <p>Contamos con más de 4.000 referencias en distintas presentaciones, con la calidad y disponibilidad que su producción necesita.</p>
-              <a className="more" href="#catalogo"><span className="circ"><Icon name="arrowUR" /></span> Ver el catálogo</a>
-            </div>
-          </div>
-          <div className="grid feat">
-            {FEATURED.map((f) => (
-              <a key={f.t} href="#cotizacion" className="featcard reveal">
-                <div className="ph" style={{ backgroundImage: `url(/images/sectores/${f.img}.jpg)` }} />
-                <div className="ov" />
-                <div className="lbl">{f.t}<div style={{ fontWeight: 500, fontSize: 13.5, opacity: 0.85 }}>{f.d}</div></div>
-              </a>
-            ))}
-            <div className="featcta reveal d2">
-              <h3>Explora todo nuestro catálogo</h3>
-              <a className="more" href="#catalogo"><span className="circ"><Icon name="arrowUR" /></span> Ver más productos</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Nosotros */}
+      {/* Quiénes somos */}
       <section id="nosotros" className="soft">
         <div className="wrap split">
           <div className="reveal">
             <span className="eyebrow">Quiénes somos</span>
-            <h2 className="title">Su aliado en el suministro de productos químicos</h2>
-            <p className="lead" style={{ maxWidth: "none", marginTop: 14 }}>
-              Somos una empresa venezolana especializada en la distribución de productos químicos e insumos industriales para múltiples sectores. Combinamos un amplio catálogo, precios competitivos y una atención cercana para que cada cliente reciba exactamente lo que necesita, a tiempo.
-            </p>
-            <div className="cta-row" style={{ marginTop: 26 }}>
-              <a className="btn btn-dark" href="#cotizacion">Solicitar cotización</a>
-              <a className="btn btn-wa" href={waLink("Hola, quisiera información sobre sus productos.")} target="_blank" rel="noopener noreferrer"><Icon name="whatsapp" /> WhatsApp</a>
-            </div>
-          </div>
-          <div className="media reveal d2" role="img" aria-label="Almacén de Benavente Martínez" />
-        </div>
-      </section>
-
-      {/* Sectores — bordered grid */}
-      <section id="sectores">
-        <div className="wrap">
-          <div className="intro reveal">
-            <div>
-              <span className="eyebrow">Sectores que atendemos</span>
-              <h2 className="title">Soluciones para cada industria</h2>
-            </div>
-            <div>
-              <p>Atendemos a múltiples sectores con la línea de productos adecuada para cada proceso productivo.</p>
-              <a className="more" href="#cotizacion"><span className="circ"><Icon name="arrowUR" /></span> Solicitar cotización</a>
-            </div>
-          </div>
-          <div className="svc reveal">
-            {SECTORES.map((s) => (
-              <div className="cell" key={s.t}>
-                <span className="ci"><Icon name={s.ic} /></span>
-                <h3>{s.t}</h3>
-                <p>{s.d}</p>
-              </div>
+            <h2 className="title">Aliados estratégicos en su crecimiento</h2>
+            {NOSOTROS.map((p, i) => (
+              <p key={i} style={{ color: "var(--muted)", fontSize: 15.5, marginTop: i === 0 ? 16 : 12 }}>{p}</p>
             ))}
           </div>
+          <div className="media reveal d2" role="img" aria-label="Laboratorio de Benavente Martínez" />
         </div>
       </section>
 
-      {/* Catálogo */}
-      <section id="catalogo" className="soft">
+      {/* Líneas de productos */}
+      <section id="productos">
         <div className="wrap">
           <div className="center reveal" style={{ marginBottom: 42 }}>
             <span className="eyebrow">Nuestro catálogo</span>
-            <h2 className="title">Líneas y productos que manejamos</h2>
+            <h2 className="title">Líneas de productos</h2>
+            <p className="lead center mx" style={{ marginTop: 12 }}>Insumos confiables para múltiples industrias. ¿No ves lo que buscas? Consúltanos.</p>
           </div>
           <div className="grid catgrid">
-            {CATALOGO.map((c, i) => (
+            {LINEAS.map((c, i) => (
               <div className={`cat reveal d${(i % 4) + 1}`} key={c.cat}>
                 <div className="h"><span className="ci"><Icon name={c.ic} /></span><h3>{c.cat}</h3></div>
                 <ul>{c.items.map((it) => <li key={it}><Icon name="check" /> {it}</li>)}</ul>
               </div>
             ))}
           </div>
+          <div className="center" style={{ marginTop: 30 }}>
+            <a className="btn btn-accent" href="#cotizacion">Cotiza aquí <Icon name="arrowUR" /></a>
+          </div>
         </div>
       </section>
 
-      {/* Por qué elegirnos */}
-      <section>
+      {/* Lo que nos distingue */}
+      <section id="distingue" className="soft">
         <div className="wrap">
-          <div className="center reveal" style={{ marginBottom: 42 }}>
-            <span className="eyebrow">Por qué elegirnos</span>
-            <h2 className="title">La confianza de trabajar con especialistas</h2>
+          <div className="center reveal mx" style={{ marginBottom: 42, maxWidth: 720 }}>
+            <span className="eyebrow">Lo que nos distingue</span>
+            <h2 className="title">Confianza que se construye con resultados</h2>
+            <p className="lead center mx" style={{ marginTop: 12 }}>
+              En un mercado exigente, nos destacamos por la solidez de nuestras alianzas, la precisión técnica y el compromiso con cada cliente. Nuestra trayectoria no solo se mide en cifras, sino en relaciones confiables y resultados comprobables.
+            </p>
           </div>
-          <div className="grid adv">
-            {VENTAJAS.map((v, i) => (
-              <div className={`advitem reveal d${i + 1}`} key={v.t}>
-                <div className="advhead">
-                  <div className="icontile"><Icon name={v.ic} /></div>
-                  <span className="num">{String(i + 1).padStart(2, "0")}</span>
-                </div>
+          <div className="grid cards">
+            {DISTINGUE.map((v, i) => (
+              <div className={`card reveal d${i + 1}`} key={v.t}>
+                <div className="icontile"><Icon name={v.ic} /></div>
                 <h3>{v.t}</h3>
                 <p>{v.d}</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Proceso */}
-      <section className="soft">
-        <div className="wrap">
-          <div className="center reveal" style={{ marginBottom: 42 }}>
-            <span className="eyebrow">Cómo trabajamos</span>
-            <h2 className="title">Tu pedido en 3 pasos</h2>
-          </div>
-          <div className="grid steps">
-            {PASOS.map((p, i) => (
-              <div className={`step reveal d${i + 1}`} key={p.t}>
-                <div className="num">{i + 1}</div>
-                <h3>{p.t}</h3>
-                <p>{p.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Blog / noticias */}
-      <section id="blog">
-        <div className="wrap">
-          <div className="intro reveal">
-            <div>
-              <span className="eyebrow">Recursos</span>
-              <h2 className="title">Noticias y guías</h2>
-            </div>
-            <div>
-              <p>Consejos y novedades sobre productos químicos e insumos industriales para su operación.</p>
-              <a className="more" href={waLink("Hola, quisiera más información.")} target="_blank" rel="noopener noreferrer"><span className="circ"><Icon name="arrowUR" /></span> Escríbenos</a>
-            </div>
-          </div>
-          <div className="grid blog">
-            {BLOG.map((b, i) => (
-              <article className={`post reveal d${i + 1}`} key={b.t}>
-                <div className="img" style={{ backgroundImage: `url(/images/sectores/${b.img}.jpg)` }} />
-                <div className="meta"><span>{b.cat}</span><span>{b.fecha}</span></div>
-                <div className="body">
-                  <h3>{b.t}</h3>
-                  <p>{b.d}</p>
-                  <a className="more" href="#contacto"><span className="circ"><Icon name="arrowUR" /></span> Leer más</a>
-                </div>
-              </article>
             ))}
           </div>
         </div>
@@ -259,8 +117,8 @@ export default function Home() {
             <div className="split">
               <div className="reveal">
                 <span className="eyebrow lime">Cotización sin compromiso</span>
-                <h2 className="title" style={{ color: "#fff", marginTop: 10 }}>Solicita tu cotización hoy</h2>
-                <p style={{ color: "#c8cdd4", fontSize: 18, marginTop: 12, maxWidth: 440 }}>Déjanos tus datos y qué necesitas. Un asesor te responde a la brevedad con precio y disponibilidad.</p>
+                <h2 className="title" style={{ color: "#fff", marginTop: 10 }}>Solicita tu cotización</h2>
+                <p style={{ color: "#c8cdd4", fontSize: 18, marginTop: 12, maxWidth: 440 }}>Déjanos tus datos y qué necesitas. Un asesor te responde a la brevedad con precio y disponibilidad, según la cantidad solicitada.</p>
                 <a className="btn btn-accent" href={waLink("Hola, quisiera solicitar una cotización.")} target="_blank" rel="noopener noreferrer" style={{ marginTop: 22 }}><Icon name="whatsapp" /> Cotizar por WhatsApp</a>
               </div>
               <QuoteForm />
@@ -273,15 +131,16 @@ export default function Home() {
       <section id="contacto" className="soft">
         <div className="wrap">
           <div className="center reveal" style={{ marginBottom: 42 }}>
-            <span className="eyebrow">Contacto</span>
+            <span className="eyebrow">Contáctanos</span>
             <h2 className="title">Estamos para ayudarte</h2>
           </div>
           <div className="grid contact">
-            <a className="cbox reveal d1" href={waLink("Hola, quisiera más información.")} target="_blank" rel="noopener noreferrer"><span className="ci"><Icon name="whatsapp" /></span><div><b>WhatsApp</b><span>Respuesta rápida con un asesor</span></div></a>
-            <div className="cbox reveal d2"><span className="ci"><Icon name="phone" /></span><div><b>Teléfono</b><span>{SITE.telefono}</span></div></div>
-            <a className="cbox reveal d3" href={`mailto:${SITE.email}`}><span className="ci"><Icon name="mail" /></span><div><b>Correo</b><span>{SITE.email}</span></div></a>
-            <div className="cbox reveal d4"><span className="ci"><Icon name="pin" /></span><div><b>Ubicación</b><span>{SITE.ubicacion} · Almacenes en {SITE.almacenes}. {SITE.despacho}.</span></div></div>
-            <div className="cbox reveal d4"><span className="ci"><Icon name="clock" /></span><div><b>Horario</b><span>{SITE.horario}</span></div></div>
+            <a className="cbox reveal d1" href={waLink("Hola, quisiera más información.")} target="_blank" rel="noopener noreferrer"><span className="ci"><Icon name="whatsapp" /></span><div><b>WhatsApp</b><span>{SITE.telefono2}</span></div></a>
+            <div className="cbox reveal d2"><span className="ci"><Icon name="phone" /></span><div><b>Teléfonos</b><span>{SITE.telefono} · {SITE.telefono2}</span></div></div>
+            <a className="cbox reveal d3" href={`mailto:${SITE.email}`}><span className="ci"><Icon name="mail" /></span><div><b>Correos</b><span>{SITE.email} · {SITE.email2}</span></div></a>
+            <div className="cbox reveal d4"><span className="ci"><Icon name="pin" /></span><div><b>Ubicación</b><span>{SITE.ubicacion}. {SITE.despacho}.</span></div></div>
+            <div className="cbox reveal d1"><span className="ci"><Icon name="clock" /></span><div><b>Horario</b><span>{SITE.horario} · {SITE.horarioDespacho}</span></div></div>
+            <a className="cbox reveal d2" href={SITE.instagram} target="_blank" rel="noopener noreferrer"><span className="ci"><Icon name="chat" /></span><div><b>Instagram</b><span>Conéctate con nosotros</span></div></a>
           </div>
           <div className="map reveal">
             <iframe title="Ubicación" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
@@ -290,24 +149,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Marcas / proveedores */}
-      <section className="soft" style={{ paddingTop: 0 }}>
-        <div className="wrap">
-          <div className="center reveal" style={{ marginBottom: 32 }}>
-            <span className="eyebrow">Confianza</span>
-            <h2 className="title">Marcas y proveedores que distribuimos</h2>
-          </div>
-          <div className="marcas reveal">
-            {["flask", "droplet", "cube", "spray", "box", "sprout"].map((ic, i) => (
-              <div className="marca" key={i} title="Logo de marca (reemplazar)"><Icon name={ic} /></div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="footer">
         <div className="wrap">
+          <p className="reveal" style={{ maxWidth: 720, margin: "0 auto 28px", textAlign: "center", color: "#c3ccd4", fontSize: 15, fontStyle: "italic" }}>
+            Gracias por confiar en nosotros. En cada producto, cada envío y cada asesoría, reafirmamos nuestro compromiso con la industria venezolana. Estamos aquí para acompañarles, con soluciones confiables y atención personalizada.
+          </p>
           <div className="fgrid">
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -315,33 +162,33 @@ export default function Home() {
               <p style={{ maxWidth: 300 }}>{SITE.descripcion}</p>
             </div>
             <div>
-              <h4>Enlaces</h4>
-              <p><a href="#nosotros">Nosotros</a></p>
-              <p><a href="#sectores">Sectores</a></p>
-              <p><a href="#catalogo">Productos</a></p>
+              <h4>Secciones</h4>
+              <p><a href="#nosotros">Quiénes somos</a></p>
+              <p><a href="#productos">Líneas de productos</a></p>
+              <p><a href="#distingue">Lo que nos distingue</a></p>
               <p><a href="#cotizacion">Cotización</a></p>
             </div>
             <div>
               <h4>Contacto</h4>
               <p>{SITE.telefono}</p>
+              <p>{SITE.telefono2}</p>
               <p>{SITE.email}</p>
               <p>{SITE.ubicacion}</p>
-              <p>Almacenes: {SITE.almacenes}</p>
             </div>
             <div>
               <h4>Horario</h4>
               <p>{SITE.horario}</p>
+              <p>{SITE.horarioDespacho}</p>
               <a className="btn btn-dark" href={waLink("Hola, quisiera solicitar una cotización.")} target="_blank" rel="noopener noreferrer" style={{ marginTop: 8 }}><Icon name="whatsapp" /> WhatsApp</a>
             </div>
           </div>
           <div className="fbot">
-            <span>© {new Date().getFullYear()} {SITE.nombre}</span>
+            <span>© {new Date().getFullYear()} {SITE.nombre} · Todos los derechos reservados</span>
             <span>RIF {SITE.rif}</span>
           </div>
         </div>
       </footer>
 
-      {/* Floating */}
       <a className="wa" href={waLink("Hola, quisiera solicitar una cotización.")} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><Icon name="whatsapp" size={30} /></a>
       <ChatWidget />
       <ScrollAnimations />

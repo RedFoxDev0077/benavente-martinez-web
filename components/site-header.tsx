@@ -4,9 +4,8 @@ import { useState } from "react";
 
 const LINKS: [string, string][] = [
   ["#nosotros", "Nosotros"],
-  ["#sectores", "Sectores"],
-  ["#catalogo", "Productos"],
-  ["#blog", "Blog"],
+  ["#productos", "Líneas de productos"],
+  ["#distingue", "Nos distingue"],
   ["#contacto", "Contacto"],
 ];
 
