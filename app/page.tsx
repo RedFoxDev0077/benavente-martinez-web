@@ -15,11 +15,11 @@ const NOSOTROS = [
   "Nos enfocamos en entender a fondo los requerimientos de cada cliente, brindando soluciones a medida que realmente aportan valor. Más que proveedores, somos aliados estratégicos en su crecimiento.",
 ];
 
-const LINEAS: { ic: string; cat: string; items: string[] }[] = [
-  { ic: "droplet", cat: "Cosmética", items: ["Aceite de Ricino USP / Hidrogenado PEG-4", "Acetato de sodio", "Óxido de Zinc", "Dióxido de titanio ANATASE", "D-Pantenol", "Carbomer (Carbopol®)", "Lanolina Anhidra USP"] },
-  { ic: "flask", cat: "Industrial", items: ["Ácido Oléico / TOFA", "Ácido Oxálico, málico, sulfámico, tánico", "Butil Hidróxi Tolueno (BHT)", "Cloruro de Zinc", "Fenilsulfonato de Calcio", "Imidazolina Oleica (Inhibidor de Corrosión · Sector Petróleo)"] },
-  { ic: "cup", cat: "Alimentaria", items: ["Ácido ascórbico, cítrico, benzoico", "Colorantes", "Lactosa", "Lecitina de soya", "Peróxido de benzoilo", "Vainillina"] },
-  { ic: "box", cat: "Otras líneas", items: ["Alimentación Balanceada Animal (ABA)", "Veterinaria", "Cuidado del hogar", "Bolsas industriales"] },
+const LINEAS: { ic: string; cat: string; img: string; items: string[] }[] = [
+  { ic: "droplet", cat: "Cosmética", img: "cosmetica", items: ["Aceite de Ricino USP / Hidrogenado PEG-4", "Acetato de sodio", "Óxido de Zinc", "Dióxido de titanio ANATASE", "D-Pantenol", "Carbomer (Carbopol®)", "Lanolina Anhidra USP"] },
+  { ic: "flask", cat: "Industrial", img: "industria", items: ["Ácido Oléico / TOFA", "Ácido Oxálico, málico, sulfámico, tánico", "Butil Hidróxi Tolueno (BHT)", "Cloruro de Zinc", "Fenilsulfonato de Calcio", "Imidazolina Oleica (Inhibidor de Corrosión · Sector Petróleo)"] },
+  { ic: "cup", cat: "Alimentaria", img: "alimentos", items: ["Ácido ascórbico, cítrico, benzoico", "Colorantes", "Lactosa", "Lecitina de soya", "Peróxido de benzoilo", "Vainillina"] },
+  { ic: "box", cat: "Otras líneas", img: "otras", items: ["Alimentación Balanceada Animal (ABA)", "Veterinaria", "Cuidado del hogar", "Bolsas industriales"] },
 ];
 
 const DISTINGUE: { ic: string; t: string; d: string }[] = [
@@ -77,6 +77,7 @@ export default function Home() {
           <div className="grid catgrid">
             {LINEAS.map((c, i) => (
               <div className={`cat reveal d${(i % 4) + 1}`} key={c.cat}>
+                <div className="catimg" style={{ backgroundImage: `url(/images/sectores/${c.img}.jpg)` }} />
                 <div className="h"><span className="ci"><Icon name={c.ic} /></span><h3>{c.cat}</h3></div>
                 <ul>{c.items.map((it) => <li key={it}><Icon name="check" /> {it}</li>)}</ul>
               </div>
