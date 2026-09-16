@@ -91,17 +91,18 @@ export default function Home() {
 
       {/* Lo que nos distingue */}
       <section id="distingue" className="soft">
-        <div className="wrap">
-          <div className="center reveal mx" style={{ marginBottom: 42, maxWidth: 720 }}>
+        <div className="wrap distingue-split">
+          <div className="reveal">
             <span className="eyebrow">Lo que nos distingue</span>
             <h2 className="title">Confianza que se construye con resultados</h2>
-            <p className="lead center mx" style={{ marginTop: 12 }}>
+            <p className="lead" style={{ marginTop: 14, maxWidth: "none" }}>
               En un mercado exigente, nos destacamos por la solidez de nuestras alianzas, la precisión técnica y el compromiso con cada cliente. Nuestra trayectoria no solo se mide en cifras, sino en relaciones confiables y resultados comprobables.
             </p>
+            <a className="btn btn-accent" href="#cotizacion" style={{ marginTop: 24 }}>Solicitar cotización <Icon name="arrowUR" /></a>
           </div>
-          <div className="grid cards">
+          <div className="distingue-grid">
             {DISTINGUE.map((v, i) => (
-              <div className={`card reveal d${i + 1}`} key={v.t}>
+              <div className={`dcard reveal d${i + 1}`} key={v.t}>
                 <div className="icontile"><Icon name={v.ic} /></div>
                 <h3>{v.t}</h3>
                 <p>{v.d}</p>
