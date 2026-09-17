@@ -10,7 +10,7 @@ export const SITE = {
   telefono2: "+58 (412) 362.27.52",
   email: "suministrostecnicosbm@gmail.com",
   email2: "compras@benaventemartinez.com",
-  instagram: "https://instagram.com/", // TODO: usuario real de Instagram
+  instagram: "https://www.instagram.com/suministrosbenaventemartinez",
   rif: "J-40891289-9",
   ubicacion: "Los Teques, Miranda, Venezuela",
   almacenes: "Valencia, Maracay y San Antonio de Los Altos",
