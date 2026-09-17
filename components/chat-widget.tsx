@@ -6,7 +6,7 @@ import { Icon } from "./icons";
 type Msg = { role: "user" | "assistant"; content: string };
 
 const GREETING =
-  "¡Hola! 👋 Soy Sumibot, el asistente virtual de Suministros Técnicos Benavente Martínez. Puedo orientarte sobre nuestros productos, cotizaciones, ubicación y contacto. ¿En qué te ayudo?";
+  "¡Hola! 👋 Soy SuminBot, el asistente virtual de Suministros Técnicos Benavente Martínez. Puedo orientarte sobre nuestros productos, cotizaciones, ubicación y contacto. ¿En qué te ayudo?";
 const SUGERENCIAS = ["¿Qué productos manejan?", "¿Cómo solicito una cotización?", "¿Hacen despacho nacional?", "¿Dónde están ubicados?"];
 
 export default function ChatWidget() {
@@ -52,15 +52,23 @@ export default function ChatWidget() {
 
   return (
     <>
-      <button className="chatfab" onClick={() => setOpen((o) => !o)} aria-label="Abrir asistente">
-        <Icon name={open ? "close" : "chat"} size={26} />
+      <button className={`chatfab${open ? " open" : ""}`} onClick={() => setOpen((o) => !o)} aria-label="Chatea con SuminBot">
+        {open ? (
+          <Icon name="close" size={26} />
+        ) : (
+          <>
+            <span className="chatfab-tx">Chatea con SuminBot</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <span className="chatfab-logo"><img src="/logo.png" alt="SuminBot" /></span>
+          </>
+        )}
       </button>
 
       {open ? (
         <div className="chatpanel" role="dialog" aria-label="Asistente virtual">
           <div className="chathead">
             <div>
-              <b>Sumibot · Asistente virtual</b>
+              <b>SuminBot · Asistente virtual</b>
               <span>Normalmente responde en segundos</span>
             </div>
             <button onClick={() => setOpen(false)} aria-label="Cerrar"><Icon name="close" size={18} /></button>

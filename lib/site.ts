@@ -17,7 +17,7 @@ export const SITE = {
   despacho: "Despacho a todo el país",
   horario: "Oficina: Lunes a viernes, 8:00 a.m. – 6:00 p.m.",
   horarioDespacho: "Despachos: a convenir",
-  chatbot: "Sumibot",
+  chatbot: "SuminBot",
 };
 
 export const waLink = (text?: string) =>
