@@ -12,7 +12,7 @@ export const SITE = {
   email2: "compras@benaventemartinez.com",
   instagram: "https://www.instagram.com/suministrosbenaventemartinez",
   rif: "J-40891289-9",
-  ubicacion: "Los Teques, Miranda, Venezuela",
+  ubicacion: "Los Teques, estado Miranda",
   almacenes: "Valencia, Maracay y San Antonio de Los Altos",
   despacho: "Despacho a todo el país",
   horario: "Oficina: Lunes a viernes, 8:00 a.m. – 6:00 p.m.",

@@ -18,9 +18,10 @@ const NOSOTROS = [
 
 const LINEAS: { ic: string; cat: string; img: string; items: string[] }[] = [
   { ic: "droplet", cat: "Cosmética", img: "cosmetica", items: ["Aceite de Ricino USP / Hidrogenado PEG-4", "Acetato de sodio", "Óxido de Zinc", "Dióxido de titanio ANATASE", "D-Pantenol", "Carbomer (Carbopol®)", "Lanolina Anhidra USP"] },
-  { ic: "flask", cat: "Industrial", img: "industria", items: ["Ácido Oléico / TOFA", "Ácido Oxálico, málico, sulfámico, tánico", "Butil Hidróxi Tolueno (BHT)", "Cloruro de Zinc", "Fenilsulfonato de Calcio", "Imidazolina Oleica (Inhibidor de Corrosión · Sector Petróleo)"] },
+  { ic: "flask", cat: "Industrial", img: "industria", items: ["Ácido Oléico / TOFA", "Ácido Oxálico, málico, sulfámico, tánico", "Butil Hidróxi Tolueno (BHT)", "Cloruro de Zinc", "Fenilsulfonato de Calcio"] },
+  { ic: "bolt", cat: "Petróleo y gas", img: "otras", items: ["2-Etil Hexanol", "Almidón Modificado de Papa", "Barita", "Bromuro de Calcio", "Ditiocarbamato de Sodio 14%", "Éster Metílico de Soya", "Glutaraldehído", "Goma Xanthan Grado Técnico", "Imidazolina", "Monoetanolamina (MEA)", "Poliacrilato de Sodio 40%", "Policloruro de Aluminio Sólido", "Silicona 12500", "Soda Cáustica Líquida", "THPS (Tetrakis)", "Tiosulfato/Hiposulfito de Sodio", "Triazina", "Trietilenglicol (TEG)"] },
   { ic: "cup", cat: "Alimentaria", img: "alimentos", items: ["Ácido ascórbico, cítrico, benzoico", "Colorantes", "Lactosa", "Lecitina de soya", "Peróxido de benzoilo", "Vainillina"] },
-  { ic: "box", cat: "Otras líneas", img: "otras", items: ["Alimentación Balanceada Animal (ABA)", "Veterinaria", "Cuidado del hogar", "Bolsas industriales"] },
+  { ic: "box", cat: "Otras líneas", img: "limpieza", items: ["Alimentación Balanceada Animal (ABA)", "Veterinaria", "Cuidado del hogar", "Bolsas industriales"] },
 ];
 
 const DISTINGUE: { ic: string; t: string; d: string }[] = [
@@ -140,11 +141,11 @@ export default function Home() {
           </div>
           <div className="grid contact">
             <a className="cbox reveal d1" href={waLink("Hola, quisiera más información.")} target="_blank" rel="noopener noreferrer"><span className="ci"><Icon name="whatsapp" /></span><div><b>WhatsApp</b><span>{SITE.telefono2}</span></div></a>
-            <div className="cbox reveal d2"><span className="ci"><Icon name="phone" /></span><div><b>Teléfonos</b><span>{SITE.telefono} · {SITE.telefono2}</span></div></div>
-            <a className="cbox reveal d3" href={`mailto:${SITE.email}`}><span className="ci"><Icon name="mail" /></span><div><b>Correos</b><span>{SITE.email} · {SITE.email2}</span></div></a>
-            <div className="cbox reveal d4"><span className="ci"><Icon name="pin" /></span><div><b>Ubicación</b><span>{SITE.ubicacion}. {SITE.despacho}.</span></div></div>
-            <div className="cbox reveal d1"><span className="ci"><Icon name="clock" /></span><div><b>Horario</b><span>{SITE.horario} · {SITE.horarioDespacho}</span></div></div>
-            <a className="cbox reveal d2" href={SITE.instagram} target="_blank" rel="noopener noreferrer"><span className="ci"><Icon name="chat" /></span><div><b>Instagram</b><span>Conéctate con nosotros</span></div></a>
+            <div className="cbox reveal d2"><span className="ci"><Icon name="phone" /></span><div><b>Teléfonos</b><span>{SITE.telefono}<br />{SITE.telefono2}</span></div></div>
+            <a className="cbox reveal d3" href={`mailto:${SITE.email}`}><span className="ci"><Icon name="mail" /></span><div><b>Correos</b><span className="breakall">{SITE.email}<br />{SITE.email2}</span></div></a>
+            <div className="cbox reveal d1"><span className="ci"><Icon name="pin" /></span><div><b>Ubicación</b><span>Domicilio Fiscal: {SITE.ubicacion}<br />{SITE.despacho}</span></div></div>
+            <div className="cbox reveal d2"><span className="ci"><Icon name="clock" /></span><div><b>Horario</b><span>{SITE.horario}<br />{SITE.horarioDespacho}</span></div></div>
+            <a className="cbox reveal d3" href={SITE.instagram} target="_blank" rel="noopener noreferrer"><span className="ci"><Icon name="instagram" /></span><div><b>Instagram</b><span>Conéctate con nosotros</span></div></a>
           </div>
           <div className="map reveal">
             <iframe title="Ubicación" loading="lazy" referrerPolicy="no-referrer-when-downgrade"

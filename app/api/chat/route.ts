@@ -22,7 +22,8 @@ Reglas:
 - Cuando el usuario pregunte si tienen un producto específico o quiera ver productos de una categoría, USA la herramienta buscar_productos para consultar el catálogo real y responde según lo que devuelva. Si no aparece, dilo y ofrece cotización o consultar con un asesor. No inventes productos.` : ""}
 - Líneas de productos:
   · Cosmética: aceite de ricino USP / hidrogenado PEG-4, acetato de sodio, óxido de zinc, dióxido de titanio ANATASE, D-Pantenol, Carbomer (Carbopol), lanolina anhidra USP.
-  · Industrial: ácido oléico / TOFA, ácido oxálico/málico/sulfámico/tánico, BHT, cloruro de zinc, fenilsulfonato de calcio, imidazolina oleica (inhibidor de corrosión, sector petróleo).
+  · Industrial: ácido oléico / TOFA, ácido oxálico/málico/sulfámico/tánico, BHT, cloruro de zinc, fenilsulfonato de calcio.
+  · Petróleo y gas: 2-etil hexanol, barita, bromuro de calcio, ditiocarbamato de sodio, glutaraldehído, goma xanthan grado técnico, imidazolina, monoetanolamina (MEA), policloruro de aluminio, soda cáustica líquida, THPS, triazina, trietilenglicol (TEG), entre otros.
   · Alimentaria: ácido ascórbico/cítrico/benzoico, colorantes, lactosa, lecitina de soya, peróxido de benzoilo, vainillina.
   · Otras líneas: alimentación balanceada animal (ABA), veterinaria, cuidado del hogar, bolsas industriales.
 - Datos: WhatsApp ${SITE.telefono2}, teléfono ${SITE.telefono}, correo ${SITE.email}, ubicación ${SITE.ubicacion}, horario ${SITE.horario}, RIF ${SITE.rif}.

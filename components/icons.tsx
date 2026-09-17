@@ -26,6 +26,7 @@ const P: Record<string, JSX.Element> = {
   arrowUR: <><path d="M7 17 17 7" /><path d="M8 7h9v9" /></>,
   play: <path d="M7 5.5v13l11-6.5z" />,
   chat: <path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z" />,
+  instagram: <><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="3.8" /><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" /></>,
   close: <><path d="M6 6l12 12" /><path d="M18 6 6 18" /></>,
   send: <><path d="M22 2 11 13" /><path d="M22 2 15 22l-4-9-9-4z" /></>,
 };
