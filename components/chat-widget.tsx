@@ -6,7 +6,7 @@ import { Icon } from "./icons";
 type Msg = { role: "user" | "assistant"; content: string };
 
 const GREETING =
-  "¡Hola! 👋 Soy el asistente de Suministros Técnicos Benavente Martínez. Puedo orientarte sobre productos, sectores, cotizaciones y contacto. ¿En qué te ayudo?";
+  "¡Hola! 👋 Soy Sumibot, el asistente virtual de Suministros Técnicos Benavente Martínez. Puedo orientarte sobre nuestros productos, cotizaciones, ubicación y contacto. ¿En qué te ayudo?";
 const SUGERENCIAS = ["¿Qué productos manejan?", "¿Cómo solicito una cotización?", "¿Hacen despacho nacional?", "¿Dónde están ubicados?"];
 
 export default function ChatWidget() {
@@ -19,6 +19,13 @@ export default function ChatWidget() {
   useEffect(() => {
     bodyRef.current?.scrollTo({ top: bodyRef.current.scrollHeight, behavior: "smooth" });
   }, [msgs, loading, open]);
+
+  // Permite abrir el chat desde otros botones de la página (evento "sumibot:open").
+  useEffect(() => {
+    const openIt = () => setOpen(true);
+    window.addEventListener("sumibot:open", openIt);
+    return () => window.removeEventListener("sumibot:open", openIt);
+  }, []);
 
   async function ask(text: string) {
     const q = text.trim();
@@ -53,7 +60,7 @@ export default function ChatWidget() {
         <div className="chatpanel" role="dialog" aria-label="Asistente virtual">
           <div className="chathead">
             <div>
-              <b>Asistente virtual</b>
+              <b>Sumibot · Asistente virtual</b>
               <span>Normalmente responde en segundos</span>
             </div>
             <button onClick={() => setOpen(false)} aria-label="Cerrar"><Icon name="close" size={18} /></button>

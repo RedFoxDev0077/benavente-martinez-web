@@ -5,11 +5,12 @@ import QuoteForm from "@/components/quote-form";
 import ScrollAnimations from "@/components/scroll-animations";
 import HeroCarousel from "@/components/hero-carousel";
 import ChatWidget from "@/components/chat-widget";
+import SumibotCTA from "@/components/sumibot-cta";
 
 const HERO_SLIDES = ["/images/hero/1.jpg", "/images/hero/2.jpg", "/images/hero/3.jpg"];
 
 const NOSOTROS = [
-  "En Suministros Técnicos Benavente Martínez, C.A. somos una empresa joven, dinámica y comprometida con posicionarnos como líderes en la comercialización de materia prima para diversas industrias. Nos especializamos en ofrecer insumos confiables para sectores como cosmética, limpieza, alimentos, textiles y más.",
+  "En Suministros Técnicos Benavente Martínez, C.A. somos una empresa joven, dinámica y comprometida con posicionarnos como la mejor opción en la comercialización de materia prima para diversas industrias. Nos especializamos en ofrecer insumos confiables para sectores como cosmética, home care, alimentos, textiles, sector petróleo y más.",
   "Nuestro compromiso con la calidad y el servicio al cliente nos impulsa a destacar en un mercado competitivo. Creemos en relaciones basadas en la honestidad, el respeto y la orientación técnica precisa. Por eso, cada cliente recibe atención personalizada y asesoría experta para seleccionar los productos que mejor se ajusten a sus necesidades.",
   "Seleccionamos cuidadosamente cada material, asegurándonos de que cumpla con los más altos estándares de calidad. Esto garantiza seguridad, confianza y resultados óptimos en sus procesos productivos.",
   "Nos enfocamos en entender a fondo los requerimientos de cada cliente, brindando soluciones a medida que realmente aportan valor. Más que proveedores, somos aliados estratégicos en su crecimiento.",
@@ -42,7 +43,7 @@ export default function Home() {
           <a href={SITE.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
         <div className="wrap inner reveal in">
-          <span className="eyebrow lime">Suministros Técnicos Benavente Martínez, C.A.</span>
+          <span className="eyebrow lime">Distribuidora de materia prima e insumos industriales</span>
           <h1 style={{ marginTop: 16 }}>Materia prima confiable para <span className="g">industrias exigentes</span></h1>
           <p>Comercializamos insumos confiables para cosmética, limpieza, alimentos, textiles y más — con asesoría técnica y atención personalizada.</p>
           <div className="cta-row">
@@ -86,6 +87,7 @@ export default function Home() {
           <div className="center" style={{ marginTop: 30 }}>
             <a className="btn btn-accent" href="#cotizacion">Cotiza aquí <Icon name="arrowUR" /></a>
           </div>
+          <div style={{ marginTop: 34 }}><SumibotCTA /></div>
         </div>
       </section>
 

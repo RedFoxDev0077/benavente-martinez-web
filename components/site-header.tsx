@@ -15,8 +15,11 @@ export default function SiteHeader() {
     <>
       <header>
         <div className="wrap nav">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="logo" src="/logo.png" alt="Suministros Técnicos Benavente Martínez" />
+          <a className="brand" href="#inicio">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="logo" src="/logo.png" alt="Suministros Técnicos Benavente Martínez" />
+            <span className="brandname">Suministros Técnicos<br />Benavente Martínez, C.A.</span>
+          </a>
           <nav className="navlinks">
             {LINKS.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
           </nav>
