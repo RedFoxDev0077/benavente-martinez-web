@@ -24,11 +24,11 @@ const LINEAS: { ic: string; cat: string; img: string; items: string[] }[] = [
   { ic: "box", cat: "Otras líneas", img: "limpieza", items: ["Alimentación Balanceada Animal (ABA)", "Veterinaria", "Cuidado del hogar", "Bolsas industriales"] },
 ];
 
-const COBERTURA: { c: string; t: string; hq?: boolean }[] = [
-  { c: "Los Teques", t: "Sede fiscal · Miranda", hq: true },
-  { c: "Valencia", t: "Almacén · Carabobo" },
-  { c: "Maracay", t: "Almacén · Aragua" },
-  { c: "San Antonio de Los Altos", t: "Almacén · Miranda" },
+const COBERTURA: { c: string; t: string; hq?: boolean; l: number; tp: number }[] = [
+  { c: "Los Teques", t: "Sede fiscal · Miranda", hq: true, l: 46.5, tp: 23.5 },
+  { c: "Valencia", t: "Almacén · Carabobo", l: 39.5, tp: 24.5 },
+  { c: "Maracay", t: "Almacén · Aragua", l: 43, tp: 24 },
+  { c: "San Antonio de Los Altos", t: "Almacén · Miranda", l: 49.5, tp: 24 },
 ];
 
 const DISTINGUE: { ic: string; t: string; d: string }[] = [
@@ -160,16 +160,30 @@ export default function Home() {
               <h3>Presencia y despacho a nivel nacional</h3>
               <p>Sede fiscal en Los Teques y almacenes en Valencia, Maracay y San Antonio de Los Altos, desde donde despachamos a todo el país.</p>
             </div>
-            <div className="cob-grid">
-              {COBERTURA.map((m) => (
-                <div className={`cob-pin${m.hq ? " hq" : ""}`} key={m.c}>
-                  <span className="pinic"><Icon name="pin" /></span>
-                  <b>{m.c}</b>
-                  <span>{m.t}</span>
+            <div className="cob-body">
+              <div className="cob-map">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/venezuela.svg" alt="Mapa de Venezuela — cobertura nacional" />
+                {COBERTURA.map((m) => (
+                  <span className={`vpin${m.hq ? " hq" : ""}`} key={m.c} style={{ left: `${m.l}%`, top: `${m.tp}%` }}>
+                    <span className="tip">{m.c}</span>
+                    <span className="dot" />
+                  </span>
+                ))}
+              </div>
+              <div className="cob-side">
+                <div className="cob-grid">
+                  {COBERTURA.map((m) => (
+                    <div className={`cob-pin${m.hq ? " hq" : ""}`} key={m.c}>
+                      <span className="pinic"><Icon name="pin" /></span>
+                      <b>{m.c}</b>
+                      <span>{m.t}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+                <div className="cob-badge"><span><Icon name="truck" /> Despacho a todo el país</span></div>
+              </div>
             </div>
-            <div className="cob-badge"><span><Icon name="truck" /> Despacho a todo el país</span></div>
           </div>
         </div>
       </section>
