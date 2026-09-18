@@ -24,6 +24,13 @@ const LINEAS: { ic: string; cat: string; img: string; items: string[] }[] = [
   { ic: "box", cat: "Otras líneas", img: "limpieza", items: ["Alimentación Balanceada Animal (ABA)", "Veterinaria", "Cuidado del hogar", "Bolsas industriales"] },
 ];
 
+const COBERTURA: { c: string; t: string; hq?: boolean }[] = [
+  { c: "Los Teques", t: "Sede fiscal · Miranda", hq: true },
+  { c: "Valencia", t: "Almacén · Carabobo" },
+  { c: "Maracay", t: "Almacén · Aragua" },
+  { c: "San Antonio de Los Altos", t: "Almacén · Miranda" },
+];
+
 const DISTINGUE: { ic: string; t: string; d: string }[] = [
   { ic: "globe", t: "Importadores confiables", d: "Alianzas sólidas con proveedores de confianza." },
   { ic: "cube", t: "Fabricantes nacionales reconocidos", d: "Respaldo de fabricantes reconocidos del país." },
@@ -124,7 +131,7 @@ export default function Home() {
                 <span className="eyebrow lime">Cotización sin compromiso</span>
                 <h2 className="title" style={{ color: "#fff", marginTop: 10 }}>Solicita tu cotización</h2>
                 <p style={{ color: "#c8cdd4", fontSize: 18, marginTop: 12, maxWidth: 440 }}>Déjanos tus datos y qué necesitas. Un asesor te responde a la brevedad con precio y disponibilidad, según la cantidad solicitada.</p>
-                <a className="btn btn-accent" href={waLink("Hola, quisiera solicitar una cotización.")} target="_blank" rel="noopener noreferrer" style={{ marginTop: 22 }}><Icon name="whatsapp" /> Cotizar por WhatsApp</a>
+                <a className="btn btn-wa" href={waLink("Hola, quisiera solicitar una cotización.")} target="_blank" rel="noopener noreferrer" style={{ marginTop: 22 }}><Icon name="whatsapp" /> Cotizar por WhatsApp</a>
               </div>
               <QuoteForm />
             </div>
@@ -147,9 +154,22 @@ export default function Home() {
             <div className="cbox reveal d2"><span className="ci"><Icon name="clock" /></span><div><b>Horario</b><span>{SITE.horario}<br />{SITE.horarioDespacho}</span></div></div>
             <a className="cbox reveal d3" href={SITE.instagram} target="_blank" rel="noopener noreferrer"><span className="ci"><Icon name="instagram" /></span><div><b>Instagram</b><span>Conéctate con nosotros</span></div></a>
           </div>
-          <div className="map reveal">
-            <iframe title="Ubicación" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Los+Teques,Miranda,Venezuela&output=embed" />
+          <div className="cobertura reveal">
+            <div className="cob-head">
+              <span className="eyebrow">Cobertura</span>
+              <h3>Presencia y despacho a nivel nacional</h3>
+              <p>Sede fiscal en Los Teques y almacenes en Valencia, Maracay y San Antonio de Los Altos, desde donde despachamos a todo el país.</p>
+            </div>
+            <div className="cob-grid">
+              {COBERTURA.map((m) => (
+                <div className={`cob-pin${m.hq ? " hq" : ""}`} key={m.c}>
+                  <span className="pinic"><Icon name="pin" /></span>
+                  <b>{m.c}</b>
+                  <span>{m.t}</span>
+                </div>
+              ))}
+            </div>
+            <div className="cob-badge"><span><Icon name="truck" /> Despacho a todo el país</span></div>
           </div>
         </div>
       </section>
@@ -163,7 +183,7 @@ export default function Home() {
           <div className="fgrid">
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <span className="lg"><img src="/logo.png" alt={SITE.nombre} /></span>
+              <img className="flogo" src="/logo-white.png" alt={SITE.nombre} />
               <p style={{ maxWidth: 300 }}>{SITE.descripcion}</p>
             </div>
             <div>
@@ -184,7 +204,7 @@ export default function Home() {
               <h4>Horario</h4>
               <p>{SITE.horario}</p>
               <p>{SITE.horarioDespacho}</p>
-              <a className="btn btn-dark" href={waLink("Hola, quisiera solicitar una cotización.")} target="_blank" rel="noopener noreferrer" style={{ marginTop: 8 }}><Icon name="whatsapp" /> WhatsApp</a>
+              <a className="btn btn-wa" href={waLink("Hola, quisiera solicitar una cotización.")} target="_blank" rel="noopener noreferrer" style={{ marginTop: 8 }}><Icon name="whatsapp" /> WhatsApp</a>
             </div>
           </div>
           <div className="fbot">
