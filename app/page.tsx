@@ -24,11 +24,11 @@ const LINEAS: { ic: string; cat: string; img: string; items: string[] }[] = [
   { ic: "box", cat: "Otras líneas", img: "limpieza", items: ["Alimentación Balanceada Animal (ABA)", "Veterinaria", "Cuidado del hogar", "Bolsas industriales"] },
 ];
 
-const COBERTURA: { c: string; t: string; hq?: boolean; l: number; tp: number }[] = [
-  { c: "Los Teques", t: "Sede fiscal · Miranda", hq: true, l: 46.5, tp: 23.5 },
-  { c: "Valencia", t: "Almacén · Carabobo", l: 39.5, tp: 24.5 },
-  { c: "Maracay", t: "Almacén · Aragua", l: 43, tp: 24 },
-  { c: "San Antonio de Los Altos", t: "Almacén · Miranda", l: 49.5, tp: 24 },
+const COBERTURA: { c: string; t: string; ic: string; hq?: boolean }[] = [
+  { c: "Los Teques", t: "Sede fiscal · Miranda", ic: "pin", hq: true },
+  { c: "Entregas en Carabobo", t: "Cobertura regional", ic: "truck" },
+  { c: "Entregas en Maracay", t: "Cobertura regional", ic: "truck" },
+  { c: "Entregas en San Antonio", t: "Cobertura regional", ic: "truck" },
 ];
 
 const DISTINGUE: { ic: string; t: string; d: string }[] = [
@@ -163,19 +163,13 @@ export default function Home() {
             <div className="cob-body">
               <div className="cob-map">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/venezuela.svg" alt="Mapa de Venezuela — cobertura nacional" />
-                {COBERTURA.map((m) => (
-                  <span className={`vpin${m.hq ? " hq" : ""}`} key={m.c} style={{ left: `${m.l}%`, top: `${m.tp}%` }}>
-                    <span className="tip">{m.c}</span>
-                    <span className="dot" />
-                  </span>
-                ))}
+                <img src="/images/cobertura-venezuela.jpg" alt="Mapa de cobertura en Venezuela — Los Teques, Carabobo, Aragua y despacho nacional" />
               </div>
               <div className="cob-side">
                 <div className="cob-grid">
                   {COBERTURA.map((m) => (
                     <div className={`cob-pin${m.hq ? " hq" : ""}`} key={m.c}>
-                      <span className="pinic"><Icon name="pin" /></span>
+                      <span className="pinic"><Icon name={m.ic} /></span>
                       <b>{m.c}</b>
                       <span>{m.t}</span>
                     </div>
@@ -197,7 +191,7 @@ export default function Home() {
           <div className="fgrid">
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="flogo" src="/logo-white.png" alt={SITE.nombre} />
+              <span className="lg"><img src="/logo.png" alt={SITE.nombre} /></span>
               <p style={{ maxWidth: 300 }}>{SITE.descripcion}</p>
             </div>
             <div>
