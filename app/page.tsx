@@ -6,6 +6,7 @@ import ScrollAnimations from "@/components/scroll-animations";
 import HeroCarousel from "@/components/hero-carousel";
 import ChatWidget from "@/components/chat-widget";
 import SumibotCTA from "@/components/sumibot-cta";
+import DestacadosBanner from "@/components/destacados-banner";
 
 const HERO_SLIDES = ["/images/hero/1.jpg", "/images/hero/2.jpg", "/images/hero/3.jpg"];
 
@@ -60,6 +61,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Destacados de la semana (editable desde el panel) */}
+      <DestacadosBanner />
 
       {/* Quiénes somos */}
       <section id="nosotros" className="soft">
