@@ -10,7 +10,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--font-jakarta),system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--txt);background:var(--bg);line-height:1.6;overflow-x:hidden}
+body{margin:0;font-family:var(--font-exo),system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--txt);background:var(--bg);line-height:1.6;overflow-x:hidden}
 h1,h2,h3{line-height:1.1;margin:0;letter-spacing:-.02em}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
