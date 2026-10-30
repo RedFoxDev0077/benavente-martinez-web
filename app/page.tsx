@@ -18,11 +18,11 @@ const NOSOTROS = [
 ];
 
 const LINEAS: { ic: string; cat: string; img: string; items: string[] }[] = [
-  { ic: "droplet", cat: "Cosmética", img: "cosmetica", items: ["Aceite de Ricino USP / Hidrogenado PEG-4", "Acetato de sodio", "Óxido de Zinc", "Dióxido de titanio ANATASE", "D-Pantenol", "Carbomer (Carbopol®)", "Lanolina Anhidra USP"] },
-  { ic: "flask", cat: "Industrial", img: "industria", items: ["Ácido Oléico / TOFA", "Ácido Oxálico, málico, sulfámico, tánico", "Butil Hidróxi Tolueno (BHT)", "Cloruro de Zinc", "Fenilsulfonato de Calcio"] },
-  { ic: "bolt", cat: "Petróleo y gas", img: "otras", items: ["2-Etil Hexanol", "Almidón Modificado de Papa", "Barita", "Bromuro de Calcio", "Ditiocarbamato de Sodio 14%", "Éster Metílico de Soya", "Glutaraldehído", "Goma Xanthan Grado Técnico", "Imidazolina", "Monoetanolamina (MEA)", "Poliacrilato de Sodio 40%", "Policloruro de Aluminio Sólido", "Silicona 12500", "Soda Cáustica Líquida", "THPS (Tetrakis)", "Tiosulfato/Hiposulfito de Sodio", "Triazina", "Trietilenglicol (TEG)"] },
-  { ic: "cup", cat: "Alimentaria", img: "alimentos", items: ["Ácido ascórbico, cítrico, benzoico", "Colorantes", "Lactosa", "Lecitina de soya", "Peróxido de benzoilo", "Vainillina"] },
-  { ic: "box", cat: "Otras líneas", img: "limpieza", items: ["Alimentación Balanceada Animal (ABA)", "Veterinaria", "Cuidado del hogar", "Bolsas industriales"] },
+  { ic: "cup", cat: "Alimentos y Nutrición", img: "alimentos", items: ["Butil Hidroxi Tolueno (BHT)", "Linicol Sun (Annatto Color A)"] },
+  { ic: "droplet", cat: "Cosmética y Cuidado Personal", img: "cosmetica", items: ["Aceite de Ricino / Castor USP", "Aceite de Ricino Etoxilado 36 EO", "Aceite de Ricino Hidrogenado (PEG 40)", "Alcohol Cetílico", "AMP 95 (2-Amino-2-Metil-1-Propanol)", "Glicerina USP", "Monoestearato de Glicerilo (Cutina GMS)", "Propilenglicol USP"] },
+  { ic: "flask", cat: "Químicos Industriales y Solventes", img: "industria", items: ["2-Etilhexanol", "Ácido Acético Glacial", "Ácido Glioxílico", "Ácido Oxálico", "Ácido Sulfámico", "Ácido Tioglicólico 80%", "Bisulfito de Sodio", "Bórax Pentahidratado", "Cloruro de Magnesio (98% / Hexahidratado)", "Diisopropanolamina (DIPA)", "Fosfato Trisódico Dodecahidratado", "Gluconato de Sodio", "Goma Sintética SBR-1502E", "Lignosulfonato de Sodio", "Magnesita Liviana", "Metabisulfito de Sodio", "Selenito de Sodio 45%", "Sulfito de Sodio"] },
+  { ic: "shield", cat: "Biocidas, Tratamiento de Agua y Oil & Gas", img: "aguas", items: ["Ácido Poliacrílico al 50%", "Antiespumante Siliconado", "Antioxidante Santoflex 6PPD", "Cloruro de Benzalconio 80%", "Deltametrina 98%", "Glutaraldehído al 50%", "Inhibidor de Corrosión", "Isotiazolinas 14%", "Poliacrilato de Sodio Líquido 26/29%", "THPS (Tetrakis)"] },
+  { ic: "flask", cat: "Materias Primas Farmacéuticas y Veterinarias", img: "agro", items: ["Amoxicilina Trihidrato", "Hierro Dextrano 10%"] },
 ];
 
 const COBERTURA: { c: string; t: string; ic: string; hq?: boolean }[] = [
